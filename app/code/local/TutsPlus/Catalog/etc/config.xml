@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config>
+    <!--Models, Helpers и Blocks регистрируются в <global>-->
+    <global>
+
+        <models>
+            <!--Название модуля-->
+            <catalog>
+                <rewrite>
+                    <!--по сути мы говорим этим - всякий раз когда создается объект catalog/category - используй мой класс(TutsPlus_Catalog_Model_Category), а не свой core класс-->
+                    <category>TutsPlus_Catalog_Model_Category</category><!--category - имя класса который мы override-->
+                    <!--TutsPlus_Catalog_Model_Category -имя класса На который override-->
+                </rewrite>
+            </catalog>
+        </models>
+
+    </global>
+</config>
