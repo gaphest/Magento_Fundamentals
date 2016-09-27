@@ -13,5 +13,4 @@ class TutsPlus_Catalog_Model_Category extends Mage_Catalog_Model_Category {
         echo "<br> МЕТОД getChildren ПЕРЕПИСАН <br>";
         return $this->getResource()->getChildren($this, false);
     }
-
 }

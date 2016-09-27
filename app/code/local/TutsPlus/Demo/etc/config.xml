@@ -21,5 +21,28 @@
                 <class>TutsPlus_Demo_Helper</class>
             </demo>
         </helpers>
+
+        <!--Т.к <events> в <global> то он будет работать и во Frontend и в Админке-->
+        <events>
+            <!--Название event'a-->
+            <customer_login>
+                <!--observer'ов (handler'ов event'а может быть несколько) -->
+                <observers>
+                    <!--название модуля-->
+                    <demo>
+                        <!--в type может быть либо model либо singletone - ЭТО трансформируется в getModel() или getSingletone()  -->
+                        <type>model</type>
+
+                        <!--это то что будет передано в getModel() (или getSingletone) - т.е getModel(demo/observer) -->
+                        <!--By convention имя файла всегда должно быть observer-->
+                        <class>demo/observer</class>
+
+                        <!--какой метод должен быть вызван при event'e - ЭТО должен быть метод класса TutsPlus_Demo_Model_Observer.php-->
+                        <method>logCustomer</method>
+                    </demo>
+
+                </observers>
+            </customer_login>
+        </events>
     </global>
 </config>

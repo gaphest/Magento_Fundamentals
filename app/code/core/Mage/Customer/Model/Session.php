@@ -218,10 +218,12 @@ class Mage_Customer_Model_Session extends Mage_Core_Model_Session_Abstract
         return false;
     }
 
+
     public function setCustomerAsLoggedIn($customer)
     {
         $this->setCustomer($customer);
         $this->renewSession();
+        //Когда Сustommer вошел выбрасывает event под названием customer_login и передает в качестве данных объект $customer (мы принимаем его в $observer)
         Mage::dispatchEvent('customer_login', array('customer'=>$customer));
         return $this;
     }
