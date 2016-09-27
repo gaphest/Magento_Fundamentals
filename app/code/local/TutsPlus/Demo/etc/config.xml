@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config>
+    <!--Models, Helpers и Blocks регистрируются в <global>-->
+    <global>
+        <models>
+            <!--Название модуля-->
+            <demo>
+                <class>TutsPlus_Demo_Model</class>
+            </demo>
+        </models>
+
+        <blocks>
+            <demo>
+                <class>TutsPlus_Demo_Block</class>
+            </demo>
+        </blocks>
+
+        <helpers>
+            <demo>
+                <class>TutsPlus_Demo_Helper</class>
+            </demo>
+        </helpers>
+    </global>
+</config>

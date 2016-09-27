@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!--Регистрация модуля в системе-->
+
+<config>
+    <modules>
+        <!--Namespace_Название-->
+        <TutsPlus_Demo>
+            <active>true</active>
+            <!--т.к module в app/code/local-->
+            <codePool>local</codePool>
+        </TutsPlus_Demo>
+    </modules>
+</config>
+
+<!--Magento будет искать модуль в app/code/local/TutsPlus/Demo-->
