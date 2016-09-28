@@ -122,6 +122,8 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
     /**
      * Customer login form page
      */
+
+    //этот Action срабатывает у контроллера когда GET Request (URL)
     public function loginAction()
     {
         if ($this->_getSession()->isLoggedIn()) {
@@ -138,6 +140,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
     /**
      * Login post action
      */
+    //этот Action для POST - сработает при submite login формы
     public function loginPostAction()
     {
         if (!$this->_validateFormKey()) {
@@ -152,6 +155,9 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         $session = $this->_getSession();
 
         if ($this->getRequest()->isPost()) {
+
+            //так получаем данные в postAction - $this->getRequest()->getPost('login')
+
             $login = $this->getRequest()->getPost('login');
             if (!empty($login['username']) && !empty($login['password'])) {
                 try {

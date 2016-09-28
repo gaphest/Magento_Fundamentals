@@ -45,4 +45,22 @@
             </customer_login>
         </events>
     </global>
+
+    <!--для какой site area сделан Router - другой вариант admin-->
+    <frontend>
+        <routers>
+            <!--Namespace_module-->
+            <tutsplus_demo>
+                <!--Стандартная Routing система (frontName/controller/action)-->
+                <use>standard</use>
+                <args>
+                    <!--какой модуль-->
+                    <module>TutsPlus_Demo</module>
+                    <!--какой frontName - берется из URL-->
+                    <frontName>demo</frontName>
+                </args>
+
+            </tutsplus_demo>
+        </routers>
+    </frontend>
 </config>
