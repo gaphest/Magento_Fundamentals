@@ -1,0 +1,8 @@
+a:4:{i:0;s:60:"Module "Astrio_BlockCarousel" requires module "Astrio_Core".";i:1;s:765:"#0 C:\www\ilovecashmere\magento\app\code\core\Mage\Core\Model\Config.php(849): Mage::throwException('Module "Astrio_...')
+#1 C:\www\ilovecashmere\magento\app\code\core\Mage\Core\Model\Config.php(812): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 C:\www\ilovecashmere\magento\app\code\core\Mage\Core\Model\Config.php(315): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 C:\www\ilovecashmere\magento\app\code\core\Mage\Core\Model\App.php(425): Mage_Core_Model_Config->loadModules()
+#4 C:\www\ilovecashmere\magento\app\code\core\Mage\Core\Model\App.php(354): Mage_Core_Model_App->_initModules()
+#5 C:\www\ilovecashmere\magento\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 C:\www\ilovecashmere\magento\index.php(83): Mage::run('', 'store')
+#7 {main}";s:3:"url";s:18:"/magento/index.php";s:11:"script_name";s:18:"/magento/index.php";}
