@@ -93,8 +93,14 @@ class Mage_Cms_Model_Page extends Mage_Core_Model_Abstract
      * Initialize resource model
      *
      */
+
+//    Это не PHP-шный construct, а собственный construct (одна _)
+//С помощью этого метода Entity Model и Resource Model gets connected
+
     protected function _construct()
     {
+        //инициализирует Resource-Model (дергает setResourceModel) в Mage_Core_Model_Abstract -
+        // и это одна из причин по которым модели должны extend этот класс
         $this->_init('cms/page');
     }
 

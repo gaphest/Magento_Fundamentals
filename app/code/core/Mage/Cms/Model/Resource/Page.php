@@ -45,6 +45,9 @@ class Mage_Cms_Model_Resource_Page extends Mage_Core_Model_Resource_Db_Abstract
      * Initialize resource model
      *
      */
+//    Это Resource-Model
+//    Такой же метод как в Entity-Model только со вторым параметром - primary key БД таблицы с которой Resource Model будет взаимодействовать
+//   Система знает какой таблицы это primary key благодаря config.xml тэг <table>
     protected function _construct()
     {
         $this->_init('cms/page', 'page_id');

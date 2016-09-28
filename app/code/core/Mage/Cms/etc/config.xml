@@ -140,15 +140,25 @@
         <models>
             <cms>
                 <class>Mage_Cms_Model</class>
+
+                <!--указываем Resource-Model и то что внутри(cms_resource) -->
+                <!--Когда мы вызваем Mage::getResourceModel(модуль/страница) то система идет в этот Node считывает значение (cms_resource) и идет в в тэг с таким именем (он ниже)-->
                 <resourceModel>cms_resource</resourceModel>
             </cms>
+
+            <!--ВЗЯТО ИЗ <resourceModel>cms_resource</resourceModel>-->
             <cms_resource>
+                <!--Magento возьмет название этого класса, добавить _страница и в autoloader.php-->
+                <!--Теперь нам нужно сконнектить Entity-Model и Resource-Model-->
                 <class>Mage_Cms_Model_Resource</class>
                 <deprecatedNode>cms_mysql4</deprecatedNode>
                 <entities>
+                    <!--Какие таблицы для этого Модуля и для какой сущности-->
                     <page>
                         <table>cms_page</table>
                     </page>
+
+                    <!--<page_store> - alias для таблицы cms_page_store так что если мне надо обратиться к таблице я могу в качестве параметра (таблицы) передать page_store-->
                     <page_store>
                         <table>cms_page_store</table>
                     </page_store>
