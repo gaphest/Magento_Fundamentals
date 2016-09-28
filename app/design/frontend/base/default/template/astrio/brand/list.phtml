@@ -1,0 +1,45 @@
+<?php
+/**
+ * @var Astrio_Brand_Block_Brand_List $this
+ * @var Astrio_Brand_Helper_Data $_brandsHelper
+ * @var Astrio_Brand_Helper_Image $_brandsImageHelper
+ * @var Astrio_Brand_Model_Brand $_brand
+ */
+$_brandsHelper = $this->helper('astrio_brand');
+$_brandsImageHelper = $this->helper('astrio_brand/image');
+$_brands = $this->getCollection();
+?>
+<?php if($_collectionSize = count($_brands)): ?>
+    <div class="brands_container">
+        <?php
+        $_columnCount = $this->getColumnsCount();
+        $i = 0;
+        foreach ($_brands as $_brand) { ?>
+            <?php if ($i == 0 || $i % $_columnCount == 0) { ?>
+                <ul class="brands-grid products-grid">
+            <?php }//endif; ?>
+
+                    <li class="item<?php if($i % $_columnCount == 0): ?> first<?php elseif(($i + 1) % $_columnCount == 0 || ($i + 1) == $_collectionSize): ?> last<?php endif; ?>">
+                        <a class="brand-pic" href="<?php echo $_brand->getBrandUrl() ?>"
+                           title="<?php echo $this->escapeHtml($_brand->getName()) ?>">
+                            <img class="brand-icon"
+                                 src="<?php echo $_brandsImageHelper->init($_brand, 'small_image')->resize(165) ?>"
+                                 alt="<?php echo $this->escapeHtml($_brand->getName()) ?>"/>
+                        </a>
+
+                        <h2 class="name">
+                            <a href="<?php echo $_brand->getBrandUrl() ?>"
+                               title="<?php echo $this->escapeHtml($_brand->getName()) ?>">
+                                <?php echo $_brand->getName() ?>
+                            </a>
+                        </h2>
+                    </li>
+
+            <?php if (($i +1) % $_columnCount == 0 || ($i + 1) == $_collectionSize) { ?>
+                </ul>
+            <?php } //endif; ?>
+
+            <?php $i++; ?>
+        <?php }//endforeach ?>
+    </div>
+<?php endif ?>

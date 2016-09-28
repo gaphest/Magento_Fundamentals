@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_News_View
+ * @var $_imageHelper Astrio_News_Helper_Image
+ * @var $_outputHelper Astrio_News_Helper_Output
+ */
+$_news = $this->getNews();
+
+$_imageHelper = $this->helper('astrio_news/image');
+$_outputHelper = $this->helper('astrio_news/output');
+?>
+
+<div class="page-title">
+    <h1><?php echo $_news->getTitle() ?></h1>
+</div>
+<div class="news-published-at">
+    <?php echo $_news->getPublishedAtFormated(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT) ?>
+</div>
+<div class="news-detail">
+    <div class="news-image">
+        <img src="<?php echo $_imageHelper->init($_news, 'image')->resize(400) ?>" alt=""/>
+    </div>
+    <div class="news-description">
+        <?php if($description = $_news->getDescription()): ?>
+            <?php echo $_outputHelper->newsAttribute($_news, $description, 'description') ?>
+        <?php endif ?>
+    </div>
+</div>

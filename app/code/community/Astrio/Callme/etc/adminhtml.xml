@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <astrio>
+            <children>
+                <callme module="astrio_callme">
+                    <title>Call Me</title>
+                    <sort_order>15</sort_order>
+                    <children>
+                        <calls module="astrio_callme">
+                            <title>Calls</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/call/index</action>
+                        </calls>
+                        <statuses module="astrio_callme">
+                            <title>Call Statuses</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/call_status/index</action>
+                        </statuses>
+                        <settings module="astrio_callme">
+                            <title>Settings</title>
+                            <sort_order>30</sort_order>
+                            <action>adminhtml/system_config/edit/section/astrio_callme</action>
+                        </settings>
+                    </children>
+                </callme>
+            </children>
+        </astrio>
+    </menu>
+    
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <astrio translate="title">
+                        <title>Astrio</title>
+                        <sort_order>0</sort_order>
+                        <children>
+                            <callme translate="title">
+                                <title>Call Me</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <calls translate="title">
+                                        <title>Calls</title>
+                                        <sort_order>10</sort_order>
+                                    </calls>
+                                    <statuses translate="title">
+                                        <title>Call Statuses</title>
+                                        <sort_order>10</sort_order>
+                                    </statuses>
+                                </children>
+                            </callme>
+                        </children>
+                    </astrio>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <astrio_callme>
+                                        <title>Astrio Call Me</title>
+                                        <sort_order>10</sort_order>
+                                    </astrio_callme>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

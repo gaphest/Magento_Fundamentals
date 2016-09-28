@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var $this Astrio_Menu_Block_Menu_Item
+ * @var $helper Astrio_Menu_Helper_Data
+ * @var $menuItem Astrio_Menu_Model_Menu_Item
+ */
+$helper = Mage::helper('astrio_menu');
+$sectionsCount = $helper->getMenuItemSectionsCount();
+
+$menuItem = $this->getMenuItem();
+?>
+<?php for ($i = 1; $i <= $sectionsCount; $i++): ?>
+	<li class="section-<?php echo $i ?>">
+		<?php echo $menuItem->getSectionHtml($i) ?>
+	</li>
+<?php endfor ?>

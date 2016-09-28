@@ -1,0 +1,10 @@
+<?php
+/**
+ * @var $this Astrio_SpecialProducts_Block_SeparatePage
+ * @var $cmsHelper Astrio_Core_Helper_Cms
+ */
+$page = $this->getPage();
+$cmsHelper = Mage::helper('astrio_core/cms');
+?>
+
+<?php echo $cmsHelper->processContentLikeCmsBlock($page->getDescription()) ?>

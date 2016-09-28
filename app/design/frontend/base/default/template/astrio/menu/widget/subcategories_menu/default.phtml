@@ -1,0 +1,55 @@
+<?php
+/**
+ * Astrio
+ *
+ * @category Astrio
+ * @package Astrio_Menu
+ * @author Eldaniz Gasymov <e.gasymov@astrio.net>
+ */
+/**
+ * @var $this Astrio_Menu_Block_Widget_SubcategoriesMenu
+ * @var $category Mage_Catalog_Model_Category
+ * @var $firstItem Mage_Catalog_Model_Category
+ * @var $lastItem Mage_Catalog_Model_Category
+ */
+$parentCategory = $this->getCurrentParentCategory();
+$categories = $this->getCurrentSubcategories();
+?>
+<?php if (count($categories)):?>
+<?php
+    $firstItem = $categories->getFirstItem();
+    $lastItem = $categories->getLastItem();
+    $level = $firstItem->getLevel() - $this->getOriginalCategoryLevel();
+?>
+<ul class="level0">
+	<?php foreach ($categories as $category): ?>
+		<?php
+		$classes = array(
+			'level' . $level,
+			);
+
+		if($firstItem->getId() == $category->getId()) {
+			$classes[] = 'first';
+		}
+
+		if($lastItem->getId() == $category->getId()) {
+			$classes[] = 'last';
+		}
+
+		$this->setCurrentParentCategory($category);
+		$childHtml = $this->toHtml();
+
+		if ($childHtml) {
+			$classes[] = 'parent';
+		}
+
+		?>
+		<li class="<?php echo implode(' ', $classes) ?>">
+			<a href="<?php echo $category->getUrl() ?>">
+				<span><?php echo $category->getName() ?></span>
+			</a>
+			<?php echo $childHtml ?>
+		</li>
+	<?php endforeach ?>
+</ul>
+<?php endif ?>

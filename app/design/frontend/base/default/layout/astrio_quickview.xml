@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>skin_js</type><script>astrio/quickview/js/quickview.js</script></action>
+
+            <action method="addJs" ifconfig="astrio_quickview/general/enabled"><script>varien/product.js</script></action>
+            <action method="addJs" ifconfig="astrio_quickview/general/enabled"><script>varien/configurable.js</script></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>skin_js</type><name>js/bundle.js</name></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem" ifconfig="astrio_quickview/general/enabled"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+
+        </reference>
+        <reference name="before_body_end">
+            <block type="astrio_quickview/init" name="astrio_quickview.init" template="astrio/quickview/init.phtml"/>
+        </reference>
+
+    </default>
+
+
+    <astrio_quickview_index_view>
+        <reference name="product.info">
+            <action method="setTemplate"><template>astrio/quickview/product/view.phtml</template></action>
+        </reference>
+    </astrio_quickview_index_view>
+
+</layout>

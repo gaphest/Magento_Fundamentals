@@ -1,0 +1,62 @@
+<?php
+/**
+ * @var $this Astrio_Callme_Block_Adminhtml_Call_View_Tab_Info
+ */
+$_call = $this->getCall();
+$callDate = $this->formatDate($_call->getCreatedAt(), 'medium', true);
+?>
+<div>
+
+    <input type="hidden" name="call_id" value="<?php echo $_call->getId() ?>"/>
+
+    <div class="box-left">
+        <?php $_email = $_call->getIsNotified() ? $this->__('email notification was sent') : $this->__('email notification is not sent'); ?>
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-account"><?php echo $this->__('Call #%s', $_call->getId())?> (<?php echo $_email?>)</h4>
+            </div>
+            <div class="fieldset">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Call Date')?></label></td>
+                        <td class="value"><strong><?php echo $callDate?></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Call Status')?></label></td>
+                        <td class="value"><strong><span id="call_status"><?php echo $_call->getStatusLabel() ?></span></strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Phone')?></label></td>
+                        <td class="value"><strong><?php echo $this->escapeHtml($_call->getPhone()) ?></strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Comment')?></label></td>
+                        <td class="value"><strong><?php echo $_call->getEscapeComment() ?></strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Added From')?></label></td>
+                        <td class="value"><strong><?php echo $this->getCallStoreName()?></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Placed from IP')?></label></td>
+                        <td class="value"><strong><?php echo $_call->getRemoteIp()?></strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box-left">
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4><?php echo $this->__('Comments History') ?></h4>
+            </div>
+            <fieldset><?php echo $this->getChildHtml('call_history') ?></fieldset>
+        </div>
+    </div>
+</div>

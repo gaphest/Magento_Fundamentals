@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var $this Astrio_Callme_Block_Form
+ */
+?>
+<div id="callme" class="call-me">
+    <div class="fieldset">
+        <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="callme-form">
+            <?php echo $this->getBlockHtml('formkey'); ?>
+            <h2 class="legend"><?php echo $this->__('Call Me') ?></h2>
+            <ul class="form-list">
+                <li>
+                    <label for="callme-phone" class="required"><?php echo $this->__('Phone Number') ?></label>
+                    <div class="input-box">
+                        <input id="callme-phone" name="phone" value=""  type="text" class="input-text required-entry" title="<?php echo $this->__('Phone Number') ?>" />
+                    </div>
+                </li>
+                <li>
+                    <label for="callme-comment"><?php echo $this->__('Comment') ?></label>
+                    <div class="input-box">
+                        <textarea name="comment" id="callme-comment" cols="30" rows="10"></textarea>
+                    </div>
+                </li>
+                <li class="buttons-set">
+                    <button type="submit" class="button btn-cancel" name="send" ><span><span><?php echo $this->__('Submit') ?></span></span></button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        var callmeForm = new VarienForm('callme-form', true);
+        //]]>
+    </script>
+</div>

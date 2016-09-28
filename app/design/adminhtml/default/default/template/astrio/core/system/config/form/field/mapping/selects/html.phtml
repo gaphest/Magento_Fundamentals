@@ -1,0 +1,125 @@
+<?php
+/**
+ * @var $this Astrio_Core_Block_Adminhtml_System_Config_Form_Field_Mapping_Selects_Html
+ */
+
+$_elementLabel      = (string) $this->getElement()->getFieldConfig()->label;
+$_magentoLabel      = (string) $this->getElement()->getFieldConfig()->magento_label;
+$_otherSystemLabel  = (string) $this->getElement()->getFieldConfig()->other_system_label;
+
+$_elementLabel      = $_elementLabel ? $_elementLabel : "Mapping";
+$_magentoLabel      = $_magentoLabel ? $_magentoLabel : "Magento(Internal)";
+$_otherSystemLabel  = $_otherSystemLabel ? $_otherSystemLabel : "Other System(External)";
+
+$divElementId = 'field_mapping_' . $this->getElement()->getId();
+$fromToDelimiter = '<span style="font-weight: bold; font-size: 22px;">&harr;</span>';
+?>
+
+<script type="text/javascript">
+    //<![CDATA[
+    function addFieldMappingSelect(elementId) {
+        Element.insert($('map_container_' + elementId), {bottom: $('map_template_' + elementId).innerHTML});
+    }
+    function removeFieldMappingSelect(button) {
+        Element.remove(button.up().parentNode);
+    }
+    function setMapFileFieldSelect(select) {
+        //select.up().parentNode.getElementsByTagName('input')[0].value = select.value;
+    }
+    //]]>
+</script>
+
+<div class="entry-edit profile-generator" style="margin: 12px 0 0 0;">
+    <div id="<?php echo $divElementId ?>">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__($_elementLabel) ?></h4>
+        </div>
+        <fieldset>
+            <legend><?php echo $this->__($_elementLabel) ?></legend>
+            <div class="profile_entity_type_product">
+                <table style="display:none">
+                    <tbody id="map_template_<?php echo $this->getElement()->getId() ?>">
+                    <tr>
+                        <td>
+                            <select class="select" name="<?php echo $this->getElement()->getName() ?>[db][]" style="width: 100%;">
+                                <?php foreach ($this->getAttributes() as $_value => $_label): ?>
+                                    <option value="<?php echo $_value ?>"><?php echo $_label ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
+                        <td><?php echo $fromToDelimiter ?></td>
+                        <td>
+                            <select class="select" name="<?php echo $this->getElement()->getName() ?>[file][]" style="width: 100%;">
+                                <?php foreach ($this->getAttributes2() as $_value => $_label): ?>
+                                    <option value="<?php echo $_value ?>"><?php echo $_label ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
+                        <td><?php echo $this->getRemoveMapButtonHtml() ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;">
+                    <colgroup>
+                        <col style="width: 41%"/>
+                        <col style="width: 4%"/>
+                        <col style="width: 40%"/>
+                        <col style="width: 15%"/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><?php echo $this->__($_magentoLabel) ?></th>
+                        <th>&nbsp;</th>
+                        <th><?php echo $this->__($_otherSystemLabel) ?></th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody id="map_container_<?php echo $this->getElement()->getId() ?>">
+                    <?php if ($this->getMappings()):?>
+                        <?php foreach ($this->getMappings() as $_i => $_dbField): ?>
+                            <tr>
+                                <td>
+                                    <select class="select" name="<?php echo $this->getElement()->getName() ?>[db][]" style="width: 100%;">
+                                        <?php foreach ($this->getAttributes() as $_value => $_label): ?>
+                                            <option value="<?php echo $_value ?>" <?php echo $this->getRowSelected($_i, $_value, 'db') ?>><?php echo $_label ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </td>
+                                <td><?php echo $fromToDelimiter ?></td>
+                                <td>
+                                    <select class="select" name="<?php echo $this->getElement()->getName() ?>[file][]" style="width: 100%;">
+                                        <?php foreach ($this->getAttributes2() as $_value => $_label): ?>
+                                            <option value="<?php echo $_value ?>" <?php echo $this->getRowSelected($_i, $_value, 'file') ?>><?php echo $_label ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                <td><?php echo $this->getRemoveMapButtonHtml() ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php endif?>
+                    </tbody>
+                </table>
+            </div>
+            <?php echo $this->getAddMapButtonHtml() ?>
+            <?php if ($this->getElement()->getComment()): ?>
+                <p class="note"><span><?php echo $this->getElement()->getComment() ?></span></p>
+            <?php endif ?>
+        </fieldset>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    Element.show($('<?php echo $divElementId ?>'));
+    var elems = Element.select('<?php echo $divElementId ?>', ['select', 'input', 'textarea', 'button', 'img']);
+    elems.each(function (elem) {
+        var isDisabled = <?php echo (int) $this->getDisabled() ?>;
+        elem.disabled = isDisabled;
+        if (isDisabled) {
+            elem.addClassName('disabled');
+        } else {
+            elem.removeClassName('disabled');
+        }
+    });
+    //]]>
+</script>

@@ -1,0 +1,6 @@
+.video-icon {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background: url(../images/play.png) no-repeat center;
+}

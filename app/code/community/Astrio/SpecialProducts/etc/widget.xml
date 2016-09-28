@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<widgets>
+    <specialproducts_set type="astrio_specialproducts/widget_set" translate="name description" module="astrio_specialproducts">
+        <name>Special Products Set</name>
+        <description>Displays Special Products</description>
+        <parameters>
+            <identifier translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Special Products Set</label>
+                <type>select</type>
+                <source_model>astrio_specialproducts/widget_source_set</source_model>
+            </identifier>
+            <active_tab translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Active Tab</label>
+                <type>select</type>
+                <source_model>astrio_specialproducts/widget_source_set</source_model>
+            </active_tab>
+            <title translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Title</label>
+                <type>text</type>
+            </title>
+            <is_random translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Is Random</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </is_random>
+            <count translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Count</label>
+                <type>text</type>
+                <value>10</value>
+            </count>
+            <template>
+                <required>1</required>
+                <value>astrio/specialproducts/widget/set/default.phtml</value>
+                <visible>1</visible>
+                <type>select</type>
+                <label>Template</label>
+                <values>
+                    <default translate="label">
+                        <value>astrio/specialproducts/widget/set/default.phtml</value>
+                        <label>Default Template</label>
+                    </default>
+                </values>
+            </template>
+        </parameters>
+    </specialproducts_set>
+
+    <specialproducts_set_tabs type="astrio_specialproducts/widget_setTabs" translate="name description" module="astrio_specialproducts">
+        <name>Special Products Set Tabs</name>
+        <description>Displays Special Products Set Tabs</description>
+        <parameters>
+            <identifiers translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Special Products Sets</label>
+                <type>multiselect</type>
+                <source_model>astrio_specialproducts/widget_source_sets</source_model>
+            </identifiers>
+            <is_random translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Is Random</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </is_random>
+            <count translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Count</label>
+                <type>text</type>
+                <value>10</value>
+            </count>
+            <template>
+                <required>1</required>
+                <value>astrio/specialproducts/widget/set_tabs/default.phtml</value>
+                <visible>1</visible>
+                <type>select</type>
+                <label>Template</label>
+                <values>
+                    <default translate="label">
+                        <value>astrio/specialproducts/widget/set_tabs/default.phtml</value>
+                        <label>Default Template</label>
+                    </default>
+                </values>
+            </template>
+            <template_for_products>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template For Products</label>
+                <type>select</type>
+                <source_model>astrio_specialproducts/system_config_source_templateSet</source_model>
+            </template_for_products>
+        </parameters>
+    </specialproducts_set_tabs>
+</widgets>

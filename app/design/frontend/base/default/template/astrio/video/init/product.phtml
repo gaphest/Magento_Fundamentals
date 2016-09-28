@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var $this Astrio_Video_Block_Init_Product
+ */
+
+$_additionalConfig = array(
+    'more_views_container' => '<div class="more-views"><h2>'. $this->__('More Views') . '</h2><ul class="product-image-thumbs"></ul></div>'
+);
+
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    jQuery(function($) {
+        $('.product-view .product-img-box:first').productVideo(<?php echo $this->getJsonConfig($_additionalConfig)?>);
+    });
+    //]]>
+</script>

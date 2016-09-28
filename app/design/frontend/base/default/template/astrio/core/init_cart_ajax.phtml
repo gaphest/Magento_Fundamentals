@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $this Astrio_Core_Block_InitCartAjax
+ */
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    jQuery(function($) {
+        $.cartAjax({
+            selector_button             : '.cart-ajax',
+            selector_overlay            : '#cart-ajax-overlay',
+            attribute_url               : 'data-cart-ajax-url',
+            attribute_related_qty_id    : 'data-cart-ajax-qty-field-id',
+            attribute_related_form_id   : 'data-cart-ajax-form-id'
+        });
+    });
+    //]]>
+</script>

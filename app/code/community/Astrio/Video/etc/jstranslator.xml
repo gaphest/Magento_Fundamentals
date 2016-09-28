@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<jstranslator>
+    <!-- astrio/video/js/product.js -->
+    <astrio-video-video-url-not-found translate="message" module="astrio_video">
+        <message>Video url not found!</message>
+    </astrio-video-video-url-not-found>
+</jstranslator>

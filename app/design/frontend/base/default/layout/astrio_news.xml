@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <astrio_news_page>
+        <reference name="content">
+            <block type="astrio_news/category_list" name="astrio.category.list" template="astrio/news/category/list.phtml"/>
+        </reference>
+    </astrio_news_page>
+
+
+    <astrio_news_index_index>
+        <update handle="astrio_news_page"/>
+        <reference name="content">
+            <block type="astrio_news/news_list" name="astrio.news.list" template="astrio/news/news/list.phtml">
+                <block type="page/html_pager" name="astrio.news.list.toolbar" as="toolbar" />
+            </block>
+        </reference>
+    </astrio_news_index_index>
+
+    <astrio_news_category_view>
+        <update handle="astrio_news_page"/>
+        <reference name="content">
+            <block type="astrio_news/category_view" name="astrio.category.view" template="astrio/news/category/view.phtml">
+                <block type="astrio_news/news_list" name="astrio.category.news.list" as="news_list" template="astrio/news/news/list.phtml">
+                    <block type="page/html_pager" name="astrio.news.category.list.toolbar" as="toolbar" />
+                </block>
+            </block>
+        </reference>
+    </astrio_news_category_view>
+
+    <astrio_news_news_view>
+        <update handle="astrio_news_page"/>
+        <reference name="content">
+            <block type="astrio_news/news_view" name="astrio.news.view" template="astrio/news/news/view.phtml"/>
+        </reference>
+    </astrio_news_news_view>
+</layout>

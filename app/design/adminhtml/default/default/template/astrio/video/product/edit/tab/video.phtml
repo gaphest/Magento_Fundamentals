@@ -1,0 +1,112 @@
+<?php
+/** @var  Astrio_Video_Block_Adminhtml_Catalog_Product_Edit_Tab_Video $this */
+$_videos = $this->getVideos();
+
+?>
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Video') ?></h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+            <input type="hidden" name="astrio_video_save" value="1"/>
+            <table class="dynamic-grid" cellspacing="0" width="98%">
+                <tr id="astrio-video-table">
+                    <th style="width: 20% "><?php echo $this->__('Title')?></th>
+                    <th><?php echo $this->__('Url')?></th>
+                    <th style="width: 10% "><?php echo $this->__('Position')?></th>
+                    <th><?php echo $this->getAddNewButtonHtml()?></th>
+                </tr>
+                <?php $_counter = 0?>
+                <?php foreach ($_videos as $key => $_video): ?>
+                    <tr class="astrio-video-row">
+                        <td>
+                            <input style="width: 99%" class="input-text" type="text" name="astrio_video[<?php echo $_counter?>][title]" value="<?php echo $this->escapeHtml($_video->getTitle()) ?>" />
+                        </td>
+                        <td>
+                            <input style="width: 99%" class="input-text astrio-required-video" type="text" name="astrio_video[<?php echo $_counter?>][content]" value="<?php echo $this->escapeHtml($_video->getContent()) ?>" />
+                        </td>
+                        <td>
+                            <input style="width: 99%" class="input-text" type="text" name="astrio_video[<?php echo $_counter?>][position]" value="<?php echo $_video->getPosition() ?>" />
+                            <input  type="hidden" name="astrio_video[<?php echo $_counter?>][video_id]" value="<?php echo $_video->getId() ?>" />
+                        </td>
+                        <td>
+                            <?php echo $this->getDeleteButtonHtml()?>
+                        </td>
+                    </tr>
+                    <?php $_counter++; ?>
+                <?php endforeach; ?>
+            </table>
+            <br/>
+            <p><b><?php echo $this->__('Supported services:')?></b></p>
+            <p><b>youtube.com</b> - <?php echo $this->__('for example %s', 'http://www.youtube.com/watch?v=s2_YDtKmsVA, https://www.youtube.com/embed/s2_YDtKmsVA')?></p>
+            <p><b>vimeo.com</b> - <?php echo $this->__('for example %s', 'https://vimeo.com/122733089, https://player.vimeo.com/video/122733089')?></p>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    
+    var astrioVideoTemplate =
+        '<tr class="astrio-video-row"><td><input style="width: 99%" class="input-text" type="text" name="astrio_video[{{key}}][title]" value="" /><\/td>' +
+        '<td><input style="width: 99%" style="min-width: 99%" class="input-text astrio-required-video" type="text" name="astrio_video[{{key}}][content]" value="" /><\/td>' +
+        '<td><input style="width: 99%" class="input-text" type="text" name="astrio_video[{{key}}][position]" value="" /><input  type="hidden" name="astrio_video[{{key}}][video_id]" value="" /><\/td>' +
+        '<td>' + '<?php echo $this->getDeleteButtonHtml() ?>' + '<\/td><\/tr>';
+
+    var astrioVideo = {
+        table : $('astrio-video-table'),
+        templateSyntax : /(^|.|\r|\n)({{(\w+)}})/,
+        templateText : astrioVideoTemplate,
+        totalItems : <?php echo count($_videos)?>,
+        add : function(data) {
+            this.template = new Template(this.templateText, this.templateSyntax);
+            data.key = this.totalItems;
+            Element.insert(this.table, {after: this.template.evaluate(data)});
+            this.bindRemoveButtons();
+            this.totalItems++;
+        },
+        remove : function(event){
+            var element = $(Event.findElement(event, 'tr'));
+            // have table parent in safari
+            // Safari workaround
+            element.ancestors().each(function(parentItem){
+                if (parentItem.hasClassName('astrio-video-row')) {
+                    element = parentItem;
+                    throw $break;
+                } else if (parentItem.hasClassName('box')) {
+                    throw $break;
+                }
+            });
+            if(element){
+                element.remove();
+                this.totalItems--;
+            }
+        },
+        bindRemoveButtons : function(){
+            var buttons = $$('.astrio-delete-video');
+            for(var i=0;i<buttons.length;i++){
+                if(!$(buttons[i]).binded){
+                    $(buttons[i]).binded = true;
+                    Event.observe(buttons[i], 'click', this.remove.bind(this));
+                }
+            }
+        }
+
+    };
+
+
+    astrioVideo.bindRemoveButtons();
+
+    if($('astrio_add_new_video_button')){
+        Event.observe('astrio_add_new_video_button', 'click', astrioVideo.add.bind(astrioVideo));
+    }
+    Validation.addAllThese([
+        ['astrio-required-video', '<?php echo Mage::helper('astrio_video')->__('Failed') ?>', function(v) {
+            return !Validation.get('IsEmpty').test(v);
+        }]]);
+
+    //]]>
+</script>

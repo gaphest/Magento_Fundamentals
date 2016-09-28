@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <adminhtml_menu_item_edit>
+        <update handle="editor"/>
+    </adminhtml_menu_item_edit>
+
+</layout>

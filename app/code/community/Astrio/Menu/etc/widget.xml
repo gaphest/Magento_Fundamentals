@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<widgets>
+    <subcategories_menu type="astrio_menu/widget_subcategoriesMenu" translate="name description" module="astrio_menu">
+        <name>Subcategories Menu</name>
+        <description>Displays subcategories menu</description>
+        <parameters>
+            <parent_category_id translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Parent Category</label>
+                <type>select</type>
+                <source_model>astrio_core/system_config_source_category</source_model>
+            </parent_category_id>
+            <depth_level translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Depth level</label>
+                <type>text</type>
+                <value>1</value>
+            </depth_level>
+            <limit translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Limit</label>
+                <type>text</type>
+                <value>10</value>
+            </limit>
+            <template translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <source_model>astrio_menu/system_config_source_templateSubcategoriesMenu</source_model>
+            </template>
+        </parameters>
+    </subcategories_menu>
+
+    <category_filter_menu type="astrio_menu/widget_categoryFilterMenu" translate="name description" module="astrio_menu">
+        <name>Category Filter Menu</name>
+        <description>Category Filter Menu</description>
+        <parameters>
+            <category_id translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Category</label>
+                <type>select</type>
+                <source_model>astrio_core/system_config_source_category</source_model>
+            </category_id>
+            <filter_type translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Type</label>
+                <type>select</type>
+                <values>
+                    <category translate="label">
+                        <value>category</value>
+                        <label>Category</label>
+                    </category>
+                    <price translate="label">
+                        <value>price</value>
+                        <label>Price</label>
+                    </price>
+                    <attribute translate="label">
+                        <value>attribute</value>
+                        <label>Attribute</label>
+                    </attribute>
+                </values>
+            </filter_type>
+            <attribute_code translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Attribute</label>
+                <type>select</type>
+                <source_model>astrio_menu/system_config_source_filterableProductAttribute</source_model>
+                <depends>
+                    <filter_type>
+                        <value>attribute</value>
+                    </filter_type>
+                </depends>
+            </attribute_code>
+            <price_range translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Price Range</label>
+                <type>text</type>
+                <value>10</value>
+                <depends>
+                    <filter_type>
+                        <value>price</value>
+                    </filter_type>
+                </depends>
+            </price_range>
+            <sort_by>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Sort By</label>
+                <type>select</type>
+                <value>10</value>
+                <values>
+                    <position translate="label">
+                        <value>position</value>
+                        <label>Position</label>
+                    </position>
+                    <name translate="label">
+                        <value>name</value>
+                        <label>Name</label>
+                    </name>
+                    <product_count translate="label">
+                        <value>product_count</value>
+                        <label>Product Count</label>
+                    </product_count>
+                </values>
+                <depends>
+                    <filter_type>
+                        <values>
+                            <category>category</category>
+                            <attribute>attribute</attribute>
+                        </values>
+                    </filter_type>
+                </depends>
+            </sort_by>
+            <limit translate="label">
+                <required>0</required>
+                <visible>1</visible>
+                <label>Limit</label>
+                <type>text</type>
+                <value>10</value>
+            </limit>
+            <template translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <source_model>astrio_menu/system_config_source_templateCategoryFilterMenu</source_model>
+            </template>
+        </parameters>
+    </category_filter_menu>
+</widgets>

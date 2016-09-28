@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Astrio_Featuredcategory>
+            <version>1.0.0</version>
+        </Astrio_Featuredcategory>
+    </modules>
+
+    <global>
+        <models>
+            <astrio_featuredcategory>
+                <class>Astrio_Featuredcategory_Model</class>
+            </astrio_featuredcategory>
+        </models>
+
+        <resources>
+            <astrio_featuredcategory_setup>
+                <setup>
+                    <module>Astrio_Featuredcategory</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </astrio_featuredcategory_setup>
+        </resources>
+
+        <blocks>
+            <astrio_featuredcategory>
+                <class>Astrio_Featuredcategory_Block</class>
+            </astrio_featuredcategory>
+        </blocks>
+
+        <helpers>
+            <astrio_featuredcategory>
+                <class>Astrio_Featuredcategory_Helper</class>
+            </astrio_featuredcategory>
+        </helpers>
+    </global>
+</config>

@@ -1,0 +1,31 @@
+<?php
+/** @var  Astrio_Video_Block_Product_List $this */
+$_videos = $this->getCollection();
+?>
+<?php if (count($_videos)):?>
+    <ul class="product-video-list">
+        <?php foreach($_videos as $_video):?>
+            <?php /** @var  Astrio_Video_Model_Video $_video */ ?>
+            <?php if ($_video->getEmbedVideoUrl()): ?>
+            <li>
+                <a class="video-link" href="#" class="" data-video-id="<?php echo $_video->getId()?>" title="<?php echo $this->escapeHtml($_video->getTitle())?>">
+                    <?php if ($_thubmnailUrl = $_video->getThumbnailUrl()): ?>
+                        <img src="<?php echo $_thubmnailUrl?>" alt="<?php echo $this->escapeHtml($_video->getTitle())?>"/>
+                    <?php else: ?>
+                        <span class="video-icon"></span>
+                    <?php endif ?>
+                </a>
+
+            </li>
+            <?php endif ?>
+        <?php endforeach?>
+    </ul>
+<?php endif?>
+
+<script type="text/javascript">
+    //<![CDATA[
+    jQuery(function($) {
+        $('.product-view .product-video-list').productVideoList(<?php echo $this->getJsonConfig() ?>);
+    });
+    //]]>
+</script>

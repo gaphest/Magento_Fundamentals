@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_cache_index>
+        <reference name="content">
+            <block type="astrio_core/adminhtml_cache_additional" name="astrio_core.cache.additional" template="astrio/core/system/cache/additional.phtml" />
+        </reference>
+    </adminhtml_cache_index>
+
+    <adminhtml_process_list>
+        <reference name="content">
+            <block type="astrio_core/adminhtml_process_list_additional" name="astrio_core.process.list.additional" template="astrio/core/process/list/additional.phtml" />
+        </reference>
+    </adminhtml_process_list>
+
+    <adminhtml_astrio_rewrites>
+        <reference name="content">
+            <block type="astrio_core/adminhtml_rewrites" name="rewrites" template="astrio/core/rewrites.phtml"/>
+        </reference>
+    </adminhtml_astrio_rewrites>
+</layout>

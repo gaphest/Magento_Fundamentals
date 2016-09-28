@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var $this Astrio_SpecialProducts_Block_Widget_SetTabs
+ * @var $tab Astrio_SpecialProducts_Block_Widget_Set
+ */
+?>
+<?php if (count($this->getTabs()) > 0): ?>
+    <div class="wrap-p-tabs">
+        <ul class="p-tabs">
+            <?php $active = true ?>
+            <?php foreach ($this->getTabs() as $tab): ?>
+                <li<?php if ($active): ?> class="p-tabs-active"<?php endif ?>>
+                    <?php if(!$active): ?><span class="p-tabs-shadow"></span><?php endif ?>
+                    <a href="#"><?php echo $tab->getTitle() ?></a>
+                </li>
+                <?php $active = false ?>
+            <?php endforeach ?>
+        </ul>
+
+        <div class="content-p-tabs top-items-product">
+            <?php foreach ($this->getTabs() as $tab): ?>
+                <?php echo $tab->toHtml() ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif ?>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <astrio translate="title" module="astrio_brand">
+            <title>Astrio</title>
+            <sort_order>71</sort_order>
+            <children>
+                <brand translate="title">
+                    <title>Brands</title>
+                    <action>adminhtml/brand</action>
+                    <sort_order>10</sort_order>
+                </brand>
+            </children>
+        </astrio>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow everything</title>
+            </all>
+            <admin>
+                <children>
+                    <astrio_brand>
+                        <title>Brands</title>
+                        <sort_order>71</sort_order>
+                    </astrio_brand>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <astrio_brand>
+                                        <title>Brands</title>
+                                        <sort_order>10</sort_order>
+                                    </astrio_brand>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

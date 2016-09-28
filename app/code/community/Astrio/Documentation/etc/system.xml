@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <astrio_all translate="label" module="astrio_documentation">
+            <label>Astrio Extensions</label>
+            <sort_order>350</sort_order>
+        </astrio_all>
+    </tabs>
+    <sections>
+        <astrio_documentation translate="label" module="astrio_documentation">
+            <label>Documentation</label>
+            <tab>astrio_all</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000030</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <documents translate="label">
+                    <label>Documents</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <allowed_extensions translate="label comment">
+                            <label>Allowed Extensions</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Specify allowed file extensions separated with comma. Leave empty to allow all extensions.</comment>
+                        </allowed_extensions>
+                        <limit translate="label">
+                            <label>Items On Page</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number validate-zero-or-greater</validate>
+                            <sort_order>20</sort_order>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </limit>
+                    </fields>
+                </documents>
+            </groups>
+        </astrio_documentation>
+    </sections>
+</config>

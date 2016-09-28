@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_Category_List
+ * @var $_helper Astrio_News_Helper_Data
+ * @var $_imageHelper Astrio_News_Helper_Image
+ * @var $_outputHelper Astrio_News_Helper_Output
+ * @var $_category Astrio_News_Model_Category
+ */
+$_collection    = $this->getCollection();
+
+$_helper        = $this->helper('astrio_news');
+$_imageHelper   = $this->helper('astrio_news/image');
+$_outputHelper  = $this->helper('astrio_news/output');
+
+$_activeCategoryId = $_helper->getActiveCategoryId();
+?>
+
+<ul class="news-categories-list">
+    <li<?php if ($_helper->isNewsMainPage()): ?> class="active"<?php endif ?>>
+        <a href="<?php echo $_helper->getListUrl() ?>"><?php echo $this->__('Show All') ?></a>
+    </li>
+    <?php foreach ($_collection as $_category): ?>
+        <li<?php if ($_activeCategoryId == $_category->getId()): ?> class="active"<?php endif ?>>
+            <a href="<?php echo $_category->getUrl() ?>"><?php echo $_category->getName() ?></a>
+        </li>
+    <?php endforeach ?>
+</ul>

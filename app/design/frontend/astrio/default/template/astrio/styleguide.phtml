@@ -1,0 +1,1045 @@
+<?php
+/**
+ * Astrio
+ *
+ * Styleguide is a set of default Magento UI elements
+ *
+ * @category    default
+ * @package     astrio_default
+ * @author      Artem Ravbetsky
+ */
+?>
+<div class="containter styleguide">
+    <div class="page-title">
+        <h1 class="styleguide-title">Styleguide</h1>
+    </div>
+    <div class="containter-ui clearfix">
+        <div class="list-ui col-lg-9">
+
+            <!--Theme variables-->
+            <div class="list-ui-item theme-variables">
+                <div class="ui-item-header"><h2 id="theme-vars">Theme variables</h2></div>
+                <div class="ui-item-content row">
+                    <div class="col-lg-3">
+                        <h4>Gradients</h4>
+                        <div class="gradients one">Blue</div>
+                        <div class="gradients two">Green</div>
+                        <div class="gradients three">Pink</div>
+                        <div class="gradients four">Orange</div>
+                        <div class="gradients five">Red</div>
+                        <div class="gradients six">Yellow</div>
+                        <div class="gradients seven">Black</div>
+                        <div class="gradients eight">Gray</div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Brand colors</h4>
+                        <div class="color one">Blue</div>
+                        <div class="color two">Green</div>
+                        <div class="color three">Pink</div>
+                        <div class="color four">Orange</div>
+                        <div class="color five">Red</div>
+                        <div class="color six">Yellow</div>
+                        <div class="color seven">Black</div>
+                        <div class="color eight">Gray</div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Patterns</h4>
+                        <div class="pattern one">Pattern 1</div>
+                        <div class="pattern two">Pattern 2</div>
+                        <div class="pattern three">Pattern 3</div>
+                        <div class="pattern four">Pattern 4</div>
+                        <div class="pattern five">Pattern 5</div>
+                        <div class="pattern six">Pattern 6</div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Fonts</h4>
+                        <div class="font arial">Arial, sans-serif</div>
+                    </div>
+                </div>
+            </div>
+            <!--//Theme variables-->
+
+            <!--Typography-->
+            <div class="list-ui-item cms-page-view">
+                <div class="ui-item-header"><h2 id="typography">Typography</h2></div>
+                <div class="ui-item-content std">
+                    <h1>Heading h1</h1>
+                    <h2>Heading h2</h2>
+                    <h3>Heading h3</h3>
+                    <h4>Heading h4</h4>
+                    <h5>Heading h5</h5>
+                    <h6>Heading h6</h6>
+                    <a href="#">Some Link</a>
+                    <p>Lorem ipsum dolor sit amet, ad mea eros munere. At usu iudico tritani suscipit. Duo dictas laoreet maluisset ei. Mollis assentior has et, cu eam dicant ancillae.</p>
+                    <img style="float: right;" src="http://placehold.it/350x120" alt=""/>
+                    <p>Id usu quem eirmod scripta, ut ius quod percipitur, an idque labore vocent quo. Quo nemore integre efficiantur te. Cu nam mucius noluisse, eos unum summo interpretaris ei, nec dicat habemus in. Mel primis denique id, id est augue graeci legimus. Ut vitae iudico definitiones eam, in pro case labore, porro verterem sententiae sit cu. Per ad altera tritani qualisque. Duo aliquip conclusionemque te, eos te commune prodesset temporibus.</p>
+                    <h3>Definition List</h3>
+                    <dl>
+                        <dt>Definition List Title</dt>
+                        <dd>This is a definition list division.</dd>
+                    </dl>
+
+                    <h3>Ordered List</h3>
+                    <ol>
+                        <li>List Item 1</li>
+                        <li>List Item 2</li>
+                        <li>List Item 3</li>
+                    </ol>
+
+                    <h3>Unordered List</h3>
+                    <ul>
+                        <li>List Item 1</li>
+                        <li>List Item 2</li>
+                        <li>List Item 3</li>
+                    </ul>
+                    <blockquote>
+                        "This stylesheet is going to help so freaking much." <br />-Blockquote
+                    </blockquote>
+                </div>
+            </div>
+            <!--//Typography-->
+
+            <!--Tables-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="tables">Tables</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample table</h3>
+                    <div class="ui-item-example">
+                        <table class="data-table">
+                            <colgroup>
+                                <col width="1"/>
+                                <col width="3"/>
+                                <col width="1"/>
+                                <col width="2"/>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Column test 1
+                                </th>
+                                <th>
+                                    Column test 2
+                                </th>
+                                <th>
+                                    Column test 3
+                                </th>
+                                <th>
+                                    Column test 4
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                                <td>Some content here</td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <?php /*<h3>Cart table</h3>
+                    <div class="ui-item-example">
+                        <table id="shopping-cart-table" style="float: none; width: 100%;" class="cart-table data-table">
+                            <colgroup>
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                            </colgroup>
+                            <thead>
+                            <tr class="first last">
+                                <th rowspan="1"><span class="nobr">Product</span></th>
+                                <th rowspan="1">&nbsp;</th>
+                                <th class="a-center cart-price-head" colspan="1">
+                                    <span class="nobr">Price</span>
+                                </th>
+                                <th rowspan="1" class="a-center">Qty</th>
+                                <th class="a-center cart-total-head" colspan="1">Subtotal</th>
+                                <th class="a-center" rowspan="1">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr class="first last">
+                                <td colspan="50" class="a-right cart-footer-actions last">
+                                    <button type="submit" style="visibility:hidden;" name="update_cart_action" value="update_qty" title="Update Shopping Cart" class="button2 btn-update"><span><span>Update Shopping Cart</span></span></button>
+
+                                    <button type="submit" name="update_cart_action" value="empty_cart" title="Empty Cart" class="button2 btn-empty" id="empty_cart_button"><span><span>Empty Cart</span></span></button>
+
+                                    <button type="submit" name="update_cart_action" value="update_qty" title="Update Shopping Cart" class="button2 btn-update"><span><span>Update Shopping Cart</span></span></button>
+                                    <span class="or">-or-</span>
+                                    <button type="button" title="Continue Shopping" class="button2 btn-continue"><span><span>Continue Shopping</span></span></button>
+                                </td>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <tr class="first odd">
+                                <td class="product-cart-image">
+                                    <a href="#" title="Khaki Bowery Chino Pants" class="product-image"><img src="http://placehold.it/138x138"></a>
+                                    <ul class="cart-links">
+                                        <li>
+                                            <a href="#" title="Edit item parameters">Edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="product-cart-info">
+                                    <a href="#" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                    <h2 class="product-name">
+                                        <a href="#" >Khaki Bowery Chino Pants</a>
+                                    </h2>
+                                    <div class="product-cart-sku">
+                                        <span class="label">SKU:</span>mpd00338</div>
+                                    <dl class="item-options">
+                                        <dt>Color</dt>
+                                        <dd>Charcoal</dd>
+                                        <dt>Size</dt>
+                                        <dd>38</dd>
+                                    </dl>
+                                </td>
+                                <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                    <span class="cart-price"><span class="price">$140.00</span></span>
+                                </td>
+                                <td class="product-cart-actions" data-rwd-label="Qty">
+                                    <input type="text" pattern="\d*" name="cart[2567][qty]" value="1" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                    <button type="submit" name="update_cart_action" value="update_qty" title="Update" class="button btn-update"><span><span>Update</span></span></button>
+                                    <ul class="cart-links">
+                                        <li>
+                                            <a href="#" title="Edit item parameters">Edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="product-cart-total" data-rwd-label="Subtotal"><span class="cart-price"><span class="price">$140.00</span></span></td>
+                                <td class="a-center product-cart-remove last">
+                                    <a href="#" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                </td>
+                            </tr>
+                            <tr class="last even">
+                                <td class="product-cart-image">
+                                    <a href="#" title="Khaki Bowery Chino Pants" class="product-image"><img src="http://placehold.it/138x138"></a>
+                                    <ul class="cart-links">
+                                        <li>
+                                            <a href="#" title="Edit item parameters">Edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td class="product-cart-info">
+                                    <a href="#" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                    <h2 class="product-name">
+                                        <a href="#" >Khaki Bowery Chino Pants</a>
+                                    </h2>
+                                    <div class="product-cart-sku">
+                                        <span class="label">SKU:</span>mpd00338</div>
+                                    <dl class="item-options">
+                                        <dt>Color</dt>
+                                        <dd>Charcoal</dd>
+                                        <dt>Size</dt>
+                                        <dd>38</dd>
+                                    </dl>
+                                </td>
+                                <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                    <span class="cart-price"><span class="price">$140.00</span>                </span>
+                                </td>
+                                <td class="product-cart-actions" data-rwd-label="Qty">
+                                    <input type="text" pattern="\d*" name="cart[2567][qty]" value="1" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                    <button type="submit" name="update_cart_action" value="update_qty" title="Update" class="button btn-update"><span><span>Update</span></span></button>
+                                    <ul class="cart-links">
+                                        <li>
+                                            <a href="#" title="Edit item parameters">Edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="product-cart-total" data-rwd-label="Subtotal"><span class="cart-price"><span class="price">$140.00</span></span></td>
+                                <td class="a-center product-cart-remove last">
+                                    <a href="#" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Orders table</h3>
+                    <div class="ui-item-example">
+                        <table class="data-table orders" id="my-orders-table">
+                            <colgroup><col width="1">
+                                <col width="1">
+                                <col>
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                            </colgroup><thead>
+                            <tr class="first last">
+                                <th class="number">Order #</th>
+                                <th class="date">Date</th>
+                                <th class="ship">Ship To</th>
+                                <th class="total"><span class="nobr">Order Total</span></th>
+                                <th class="status"><span class="nobr">Order Status</span></th>
+                                <th class="view">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="first last odd">
+                                <td class="number">145000004</td>
+                                <td class="date"><span class="nobr">2/16/2015</span></td>
+                                <td class="ship">Faraz Test</td>
+                                <td class="total"><span class="price">$1,011.15</span></td>
+                                <td class="status"><em>Pending</em></td>
+                                <td class="a-center view last">
+                                <span class="nobr">
+                                    <a href="#">View Order</a>
+                                    <span class="separator">|</span><a href="#" class="link-reorder">Reorder</a>
+                                </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Checkout totals table</h3>
+                    <div class="ui-item-example">
+                        <div id="checkout-review-table-wrapper">
+                            <table class="data-table linearize-table checkout-review-table" id="checkout-review-table">
+                                <colgroup>
+                                    <col>
+                                    <col width="1">
+                                    <col width="1">
+                                    <col width="1">
+                                </colgroup>
+                                <thead>
+                                <tr class="first last">
+                                    <th rowspan="1">Product</th>
+                                    <th colspan="1" class="a-center">Price</th>
+                                    <th rowspan="1" class="a-center">Qty</th>
+                                    <th colspan="1" class="a-center">Subtotal</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr class="first">
+                                    <td style="" class="a-right" colspan="3">Subtotal</td>
+                                    <td style="" class="a-right last"><span class="price">$55.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="" class="a-right" colspan="3">Shipping &amp; Handling (Flat Rate - Fixed)</td>
+                                    <td style="" class="a-right last"><span class="price">$5.00</span></td>
+                                </tr>
+                                <tr class="last">
+                                    <td style="" class="a-right" colspan="3">
+                                        <strong>Grand Total</strong>
+                                    </td>
+                                    <td style="" class="a-right last">
+                                        <strong><span class="price">$60.00</span></strong>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr class="first last odd">
+                                    <td><h3 class="product-name">Blue Horizons Bracelets</h3></td>
+                                    <td class="a-right" data-rwd-label="Price"><span class="cart-price"><span class="price">$55.00</span></span></td>
+                                    <td class="a-center" data-rwd-label="Qty">1</td>
+                                    <td class="a-right last" data-rwd-label="Subtotal"><span class="cart-price"><span class="price">$55.00</span></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="checkout-review-submit">
+                            <div class="buttons-set" id="review-buttons-container">
+                                <button type="submit" title="Place Order" class="button btn-checkout"><span><span>Place Order</span></span></button>
+                                <p class="f-left">Forgot an Item? <a href="#">Edit Your Cart</a></p>
+                            </div>
+                        </div>
+                    </div>*/?>
+                    <div class="col-lg-6">
+                        <h3>Product attributes table</h3>
+                        <div class="ui-item-example">
+                            <table class="data-table attr-table">
+                                <colgroup><col width="25%">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr class="first odd">
+                                    <th class="label">Occasion</th>
+                                    <td class="data last">Casual</td>
+                                </tr>
+                                <tr class="even">
+                                    <th class="label">Type</th>
+                                    <td class="data last">Tees</td>
+                                </tr>
+                                <tr class="last odd">
+                                    <th class="label">Gender</th>
+                                    <td class="data last">Male</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Tables-->
+
+            <!--Toolbars-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="toolbars">Toolbars</h2></div>
+                <div class="ui-item-content">
+                    <h3>Default toolbar</h3>
+                    <div class="ui-item-example">
+                        <div class="toolbar">
+                            <div class="sorter">
+                                <p class="view-mode">
+                                    <label>View as</label>
+                                    <a href="#" title="Grid" class="grid">Grid</a>
+                                    <strong title="List" class="list">List</strong>
+                                </p>
+                                <div class="sort-by">
+                                    <label>Sort By</label>
+                                    <select title="Sort By">
+                                        <option value="..." selected="selected">Position</option>
+                                        <option value="...">Name</option>
+                                        <option value="...">Price</option>
+                                    </select>
+                                    <a href="#" class="sort-by-switcher sort-by-switcher--asc" title="Set Descending Direction">Set Descending Direction</a>
+                                </div>
+                            </div>
+                            <div class="pager">
+                                <div class="count-container">
+                                    <p class="amount amount--has-pages">6-10 of 12</p>
+                                    <div class="limiter">
+                                        <label>Show</label>
+                                        <select title="Results per page">
+                                            <option value="..." selected="selected">12</option>
+                                            <option value="...">24</option>
+                                            <option value="...">36</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="pages">
+                                    <strong>Page:</strong>
+                                    <ol>
+                                        <li><a class="previous i-previous" href="#" title="Previous">Previous</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li class="current">2</li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a class="next i-next" href="#" title="Next">Next</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Toolbars-->
+
+            <!--Buttons-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="buttons">Buttons</h2></div>
+                <div class="ui-item-content row">
+                    <div class="col-lg-4">
+                        <h3>Default buttons</h3>
+                        <div class="ui-item-example">
+                            <button class="button">
+                                <span><span>Default button</span></span>
+                            </button>
+                            <br/>
+                            <button class="button disabled" disabled="disabled">
+                                <span><span>Disabled button</span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>System buttons</h3>
+                        <div class="ui-item-example">
+                            <p class="back-link"><a href="#"><small>« </small>Back</a></p>
+                            <div class="add-to-cart">
+                                <div class="add-to-cart-buttons">
+                                    <button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+                                </div>
+                            </div>
+<!--                            <ul class="add-to-links">-->
+<!--                                <li><a href="#" class="link-wishlist">Add to Wishlist</a></li>-->
+<!--                                <li><span class="separator">|</span> <a href="#" class="link-compare">Add to Compare</a></li>-->
+<!--                            </ul>-->
+                            <br/>
+                            <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout"><span><span>Proceed to Checkout</span></span></button>
+                            <br/>
+                            <button type="button" title="Estimate" onclick="coShippingMethodForm.submit()" class="button2">
+                                <span><span>Estimate</span></span>
+                            </button>
+                            <br/>
+                            <button type="submit" title="Place Order" class="button btn-checkout"><span><span>Place Order</span></span></button>
+                            <br/>
+                            <button type="submit" title="Submit Form" class="button"><span><span>Submit Form</span></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Special buttons</h3>
+                    </div>
+                </div>
+            </div>
+            <!--//Buttons-->
+
+            <!--Forms-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="forms">Forms</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample form elements</h3>
+                    <div class="ui-item-example">
+                        <form class="scaffold-form" action="#">
+                            <div class="fieldset">
+                                <h2 class="legend">Legend heading</h2>
+                                <p class="form-instructions">Please enter the following information to create your account.</p>
+                                <p class="required">* Required Fields</p>
+                                <ul class="form-list">
+                                    <li>
+                                        <label for="el1" class="required">Input type text</label>
+                                        <div class="input-box">
+                                            <input id="el1" type="text" class="input-text"/>
+                                        </div>
+                                    </li>
+                                    <li class="fields">
+                                        <div class="field name-firstname">
+                                            <label for="firstname" class="required"><em>*</em>Error field</label>
+                                            <div class="input-box validation-error">
+                                                <input type="text" id="firstname" name="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry validation-failed" autocomplete="off"><div class="validation-advice" id="advice-required-entry-firstname">This is a required field.</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="fields">
+                                        <div class="field name-firstname">
+                                            <label for="firstname">Disabled field</label>
+                                            <div class="input-box">
+                                                <input type="text" id="firstname1" name="firstname1" value="" title="First Name" maxlength="255" class="input-text" disabled="disabled" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="el2" class="required">Input type select</label>
+                                        <div class="input-box">
+                                            <select name="el2" id="el2">
+                                                <option value="1">test1</option>
+                                                <option value="2">test2</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="m-select">Multiple select</label>
+                                        <div class="input-box">
+                                            <select name="m-select" id="m-select" class="multiselect" title="Tax Class" multiple="multiple" size="4"><option value="0">None</option><option value="2">Taxable Goods</option><option value="4">Shipping</option></select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="el3" class="required">Input type textarea</label>
+                                        <div class="input-box">
+                                            <textarea name="el3" id="el3" cols="20" class="input-text" rows="5"></textarea>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="el7" class="required">Input file</label>
+                                        <div class="input-box">
+                                            <input id="el7" type="file" class="file"/>
+                                        </div>
+                                    </li>
+                                    <li class="control">
+                                        <div class="input-box">
+                                            <input id="el4" type="radio" name="radio1" class="radio"/>
+                                        </div>
+                                        <label for="el4" class="required">Input type radio 1</label>
+                                    </li>
+                                    <li class="control">
+                                        <div class="input-box">
+                                            <input id="el5" type="radio" name="radio1" class="radio"/>
+                                        </div>
+                                        <label for="el5" class="required">Input type radio 2</label>
+                                    </li>
+                                    <li class="control">
+                                        <div class="input-box">
+                                            <input id="el6" type="checkbox" name="check1" class="checkbox"/>
+                                        </div>
+                                        <label for="el6" class="required">Input type checkbox</label>
+                                    </li>
+                                </ul>
+                                <div class="buttons-set">
+                                    <p class="back-link"><a href="#" class="back-link"><small>« </small>Back</a></p>
+                                    <button type="submit" title="Register" class="button validation-passed" autocomplete="off"><span><span>Submit form</span></span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--//Forms-->
+
+            <!--Block-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="blocks">Blocks</h2></div>
+                <div class="ui-item-content row">
+                    <div class="col-lg-4">
+                        <div class="ui-item-example">
+                            <div class="block block-list block-compare">
+                                <div class="block-title">
+                                    <strong><span>Default sidebar block</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <p class="empty">Content goes here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-item-example">
+                            <div class="block block-list block-viewed">
+                                <div class="block-title">
+                                    <strong><span>Recently Viewed Products</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ol id="recently-viewed-items" class="mini-products-list">
+                                        <li class="item odd">
+                                            <a href="#"><span class="product-image"><img src="http://placehold.it/50x50"></span></a>
+                                            <div class="product-details">
+                                                <p class="product-name">
+                                                    <a href="#">Pearl Necklace Set</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="item last even">
+                                            <a href="#"><span class="product-image"><img src="http://placehold.it/50x50"></span></a>
+                                            <div class="product-details">
+                                                <p class="product-name"><a href="#">Ann Ankle Boot</a></p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ui-item-example">
+                            <div class="block block-reorder">
+                                <div class="block-title">
+                                    <strong><span>My Orders</span></strong>
+                                </div>
+                                <form method="post" action="#" id="reorder-validate-detail">
+                                    <input name="form_key" type="hidden">
+                                    <div class="block-content">
+                                        <p class="block-subtitle">Last Ordered Items</p>
+                                        <ol id="cart-sidebar-reorder">
+                                            <li class="item odd">
+                                                <input type="checkbox" name="order_items[]" id="reorder-item-588" value="588" title="Add to Cart" class="checkbox validate-one-required-by-name">
+                                                <p class="product-name"><a href="#">Sullivan Sport Coat</a></p>
+                                            </li>
+                                            <li class="item even">
+                                                <input type="checkbox" name="order_items[]" id="reorder-item-586" value="586" title="Add to Cart" class="checkbox validate-one-required-by-name">
+                                                <p class="product-name"><a href="#">Khaki Bowery Chino Pants</a></p>
+                                            </li>
+                                            <li class="item last odd">
+                                                <input type="checkbox" name="order_items[]" id="reorder-item-590" value="590" title="Add to Cart" class="checkbox validate-one-required-by-name">
+                                                <p class="product-name"><a href="#">Aviator Sunglasses</a></p>
+                                            </li>
+                                        </ol>
+                                        <script type="text/javascript">decorateList('cart-sidebar-reorder')</script>
+                                        <div id="cart-sidebar-reorder-advice-container"></div>
+                                        <div class="actions">
+                                            <button type="submit" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+                                            <a href="#">View All</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="ui-item-example">
+                            <div class="block block-account">
+                                <div class="block-title">
+                                    <strong><span>My Account</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li class="current"><a href="#"><strong>Account Dashboard</strong></a></li>
+                                        <li><a href="#">Account Information</a></li>
+                                        <li><a href="#">Address Book</a></li>
+                                        <li><a href="#">My Orders</a></li>
+                                        <li><a href="#">My Product Reviews</a></li>
+                                        <li><a href="#">Gift Card</a></li>
+                                        <li><a href="#">Reward Points</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ui-item-example">
+                            <div class="block block-cms-menu">
+                                <div class="block-title">
+                                    <strong><span>Company</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a href="#"><span>About Us</span></a></li>
+                                        <li><a href="#"><span>Contact us</span></a></li>
+                                        <li><a href="#"><span>Customer Service</span></a></li>
+                                        <li><a href="#"><span>Privacy Policy</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Block-->
+
+            <!--Breadcrumbs-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="breadcrumbs">Breadcrumbs</h2></div>
+                <div class="ui-item-content">
+                    <h3>Default breadcrumbs</h3>
+                    <div class="ui-item-example">
+                        <div class="breadcrumbs" style="margin: 0;">
+                            <ul>
+                                <li class="home">
+                                    <a href="#" title="Go to Home Page">Home</a>
+                                    <span>> </span>
+                                </li>
+                                <li class="category6">
+                                    <a href="#" title="">Accessories</a>
+                                    <span>> </span>
+                                </li>
+                                <li class="category19">
+                                    <strong>Jewelry</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Breadcrumbs-->
+
+            <!--Boxes-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="boxes">Boxes & Col-sets</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample account address boxes</h3>
+                    <div class="ui-item-example dashboard">
+                        <div class="box-account box-info">
+                            <div class="box-head">
+                                <h2>Address Book</h2>
+                                <a href="#">Manage Addresses</a>
+                            </div>
+                            <div class="col2-set">
+                                <div class="col-1">
+                                    <div class="box">
+                                        <div class="box-title">
+                                            <h3>Default Billing Address</h3>
+                                            <a href="#">Edit Address</a>
+                                        </div>
+                                        <div class="box-content">
+                                            <address>test test<br>test<br>test<br>test,  American Samoa, 123123<br>United States<br>T: test<br>F: test</address>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box">
+                                        <div class="box-title">
+                                            <h3>Default Shipping Address</h3>
+                                            <a href="#">Edit Address</a>
+                                        </div>
+                                        <div class="box-content">
+                                            <address>test test<br>test<br>test<br>test,  American Samoa, 123123<br>United States<br>T: test<br>F: test</address>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Boxes-->
+
+            <?php /*<!--Checkout-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="checkout">Checkout</h2></div>
+                <div class="ui-item-content">
+                    <h3>Checkout Steps</h3>
+                    <div class="ui-item-example">
+                        <ol class="opc" id="checkoutSteps">
+                            <li class="section allow">
+                                <div class="step-title">
+                                    <span class="number">1</span>
+                                    <h2>Checkout Method</h2>
+                                    <a href="#">Edit</a>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </li>
+                            <li class="section allow active">
+                                <div class="step-title">
+                                    <span class="number">2</span>
+                                    <h2>Billing Information</h2>
+                                    <a href="#">Edit</a>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!--//Checkout-->*/?>
+
+            <!--Loaders-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="loaders">Loaders</h2></div>
+                <div class="ui-item-content row">
+                    <div class="col-lg-6">
+                        <h3>Default ajax loader</h3>
+                        <div class="ui-item-example">
+                            <img src="<?php echo $this->getSkinUrl('images/ajax-loader.gif')?>" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Checkout step loader</h3>
+                        <div class="ui-item-example">
+                            <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Loaders-->
+
+            <!--Messages-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="messages">Messages</h2></div>
+                <div class="ui-item-content">
+                    <h3>System messages</h3>
+                    <div class="ui-item-example">
+                        <ul class="messages"><li class="success-msg"><ul><li><span>Thank you for registering with Madison Island.</span></li></ul></li></ul>
+                        <ul class="messages"><li class="error-msg"><ul><li><span>The requested quantity for "Chelsea Tee" is not available.</span></li></ul></li></ul>
+                        <ul class="messages"><li class="notice-msg"><ul><li><span>The requested quantity for "Chelsea Tee" is not available.</span></li></ul></li></ul>
+                    </div>
+                </div>
+            </div>
+            <!--//Messages-->
+
+            <!--Navigation-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="navigation">Navigation</h2></div>
+                <div class="ui-item-content">
+                    <h3>Header navigation</h3>
+                    <div class="ui-item-example">
+                        <div id="header-nav" class="skip-content">
+                            <nav id="nav">
+                                <ol class="custom-menu nav-primary">
+                                    <li class="level-top level0  menu-item-1 nav-1 first parent">
+                                        <a href="#" class="level-top level0 has-children ">Item 1</a>
+                                        <ul class="dropdown">
+                                            <li class="section-1">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-2">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-3">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-4">
+                                                <p>test 1</p>	</li>
+                                        </ul>
+                                    </li>
+                                    <li class="level-top level0  menu-item-2 nav-2 parent">
+                                        <a href="#" class="level-top level0 has-children ">Item 2</a>
+                                        <ul class="dropdown">
+                                            <li class="section-1">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-2">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-3">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-4">
+                                                <p>test 1</p>	</li>
+                                        </ul>
+                                    </li>
+                                    <li class="level-top level0  menu-item-3 nav-3 parent">
+                                        <a href="#" class="level-top level0 has-children ">Item 3</a>
+                                        <ul class="dropdown">
+                                            <li class="section-1">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-2">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-3">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-4">
+                                                <p>test 1</p>	</li>
+                                        </ul>
+                                    </li>
+                                    <li class="level-top level0  menu-item-4 nav-4 parent">
+                                        <a href="#" class="level-top level0 has-children ">Item 4</a>
+                                        <ul class="dropdown">
+                                            <li class="section-1">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-2">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-3">
+                                                <p>test 1</p>	</li>
+                                            <li class="section-4">
+                                                <p>test 1</p>	</li>
+                                        </ul>
+                                    </li>
+                                    <li class="level-top level0 current menu-item-5 nav-5">
+                                        <a href="#" class="level-top level0">Item 5</a>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Navigation-->
+
+            <!--Page Title-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="page-title">Page Title</h2></div>
+                <div class="ui-item-content">
+                    <h3>Default title</h3>
+                    <div class="ui-item-example">
+                        <div class="page-title">
+                            <h1>Page Title</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Page Title-->
+
+            <!--Pagination-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="pagination">Pagination</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample pager</h3>
+                    <div class="ui-item-example">
+                        <div class="pager pager-no-toolbar" style="float: none;">
+                            <div class="pages" style="float: none;">
+                                <strong>Page:</strong>
+                                <ol>
+                                    <li><a class="previous i-previous" href="#" title="Previous">Previous</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li class="current">4</li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a class="next i-next" href="#" title="Next">Next</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Pagination-->
+
+            <!--Popups-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="popups">Popups</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample popup</h3>
+                    <div class="ui-item-example">
+                        <a class="button show-popup" href=#">Show popup</a>
+                    </div>
+                </div>
+            </div>
+            <!--//Popups-->
+
+            <!--Ratings-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="ratings">Ratings</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample rating</h3>
+                    <div class="ui-item-example">
+                        <div class="ratings">
+                            <div class="rating-box">
+                                <div class="rating" style="width:75%"></div>
+                            </div>
+                            <p class="rating-links">
+                                <a href="#">2 Review(s)</a>
+                                <span class="separator">|</span>
+                                <a href="#">Add Your Review</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Ratings-->
+
+            <!--Tabs and accordions-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="tabs">Tabs and accordions</h2></div>
+                <div class="ui-item-content">
+                    <h3>Sample Tabs</h3>
+                    <div class="ui-item-example">
+                        <div class="product-collateral toggle-content tabs">
+                            <dl id="collateral-tabs11" class="collateral-tabs">
+                                <dt class="tab"><span>Tab 1</span></dt>
+                                <dd class="tab-container">
+                                    <div class="tab-content">
+                                        <h2>Tab 1 heading</h2>
+                                        <div class="std">Tab 1 content</div>
+                                    </div>
+                                </dd>
+                                <dt class="tab current"><span>Tab 2</span></dt>
+                                <dd class="tab-container current">
+                                    <div class="tab-content">
+                                        <h2>Tab 2 heading</h2>
+                                        <div class="std">Tab 2 content</div>
+                                    </div>
+                                </dd>
+                                <dt class="tab current"><span>Tab 3</span></dt>
+                                <dd class="tab-container current">
+                                    <div class="tab-content">
+                                        <h2>Tab 3 heading</h2>
+                                        <div class="std">Tab 3 content</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Tabs and accordions-->
+
+            <!--Misc-->
+            <div class="list-ui-item">
+                <div class="ui-item-header"><h2 id="misc">Misc</h2></div>
+                <div class="ui-item-content">
+                    <p>All specific elements goes here...</p>
+                </div>
+            </div>
+            <!--//Misc-->
+        </div>
+
+        <div class="menu-ui col-lg-3">
+            <div class="list-group">
+                <a class="list-group-item" href="#theme-vars">Theme variables</a>
+                <a class="list-group-item" href="#typography">Typography</a>
+                <a class="list-group-item" href="#tables">Tables</a>
+                <a class="list-group-item" href="#toolbars">Toolbars</a>
+                <a class="list-group-item" href="#buttons">Buttons</a>
+                <a class="list-group-item" href="#forms">Forms</a>
+                <a class="list-group-item" href="#blocks">Blocks</a>
+                <a class="list-group-item" href="#breadcrumbs">Breadcrumbs</a>
+                <a class="list-group-item" href="#boxes">Boxes & Col-sets</a>
+<!--                <a class="list-group-item" href="#checkout">Checkout</a>-->
+                <a class="list-group-item" href="#loaders">Loaders</a>
+                <a class="list-group-item" href="#messages">Messages</a>
+                <a class="list-group-item" href="#navigation">Navigation</a>
+                <a class="list-group-item" href="#page-title">Page Title</a>
+                <a class="list-group-item" href="#pagination">Pagination</a>
+                <a class="list-group-item" href="#popups">Popups</a>
+                <a class="list-group-item" href="#ratings">Ratings</a>
+                <a class="list-group-item" href="#tabs">Tabs</a>
+                <a class="list-group-item" href="#misc">Misc</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="block-logo">
+            <a href="http://astrio.net/" target="_blank"></a>
+            <span>Magento Design &amp; Development</span>
+        </div>
+    </footer>
+</div>

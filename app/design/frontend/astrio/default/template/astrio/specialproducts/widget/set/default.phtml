@@ -1,0 +1,85 @@
+<?php
+/**
+ * @var $this Astrio_SpecialProducts_Block_Widget_Set
+ * @var $_helper Mage_Catalog_Helper_Output
+ * @var $_product Mage_Catalog_Model_Product
+ */
+$_productCollection = $this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+
+/**
+ * @var $_labelHelper Astrio_SpecialProducts_Helper_Label
+ */
+$_labelHelper = $this->helper('astrio_specialproducts/label');
+$_labelHelper->assignLabelsToProductCollection($_productCollection);
+?>
+<div class="category-products">
+    <h3><?php echo $this->getTitle(); ?></h3>
+    <?php $_iterator = 0; ?>
+    <ol class="products-list" id="products-list">
+        <?php foreach ($_productCollection as $_product): ?>
+            <?php $_labelHtml = $_labelHelper->getLabelsHtml($_product)?>
+            <?php
+            /**
+             * @var $_product Mage_Catalog_Model_Product
+             */
+            ?>
+            <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+                <?php // Product Image ?>
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                    <img width="135" height="135"
+                         src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>"
+                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
+                    <?php echo $_labelHtml?>
+                </a>
+                <?php // Product description ?>
+                <div class="product-shop">
+                    <div class="f-fix">
+                        <div class="product-primary">
+                            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                            <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h2>
+                            <?php if($_product->getRatingSummary()): ?>
+                                <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="product-secondary">
+                            <?php echo $this->getPriceHtml($_product, true) ?>
+                        </div>
+                        <div class="product-secondary">
+                            <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                                <p class="action">
+                                    <button type="button"
+                                            class="button btn-cart cart-ajax"
+                                            data-cart-ajax-url="<?php echo $this->helper('astrio_core/cart')->getAddToCartByAjaxUrl($_product)?>"
+                                            title="<?php echo $this->__('Add to Cart') ?>"
+                                            onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+                                        <span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                </p>
+                            <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                                <p class="action"><a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
+                            <?php else: ?>
+                                <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <?php endif; ?>
+                            <ul class="add-to-links">
+                                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                <?php endif; ?>
+                                <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                                    <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <div class="desc std">
+                            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+</div>
+<?php if ($this->getSet()->getUseSeparatePage()):?>
+    <a href="<?php echo $this->getSet()->getPageUrl()?>"><?php echo $this->__('View all')?></a>
+<?php endif ?>

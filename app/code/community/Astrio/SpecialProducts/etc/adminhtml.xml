@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <astrio translate="title" module="astrio_specialproducts">
+            <title>Astrio</title>
+            <sort_order>71</sort_order>
+            <children>
+                <specialproducts translate="title" module="astrio_specialproducts">
+                    <title>Special Products</title>
+                    <sort_order>30</sort_order>
+                    <children>
+                        <set translate="title" module="astrio_specialproducts">
+                            <title>Sets</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/specialProducts_set/index</action>
+                        </set>
+                    </children>
+                </specialproducts>
+            </children>
+        </astrio>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <astrio translate="title" module="astrio_specialproducts">
+                        <title>Astrio</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <specialproducts translate="title" module="astrio_specialproducts">
+                                <title>Special Products</title>
+                                <sort_order>71</sort_order>
+                                <children>
+                                    <set translate="title" module="astrio_specialproducts">
+                                        <title>Sets</title>
+                                        <sort_order>10</sort_order>
+                                    </set>
+                                </children>
+                            </specialproducts>
+                        </children>
+                    </astrio>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <astrio_specialproducts translate="title" module="astrio_specialproducts">
+                                        <title>Astrio Core</title>
+                                        <sort_order>10</sort_order>
+                                    </astrio_specialproducts>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

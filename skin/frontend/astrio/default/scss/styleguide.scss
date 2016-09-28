@@ -1,0 +1,181 @@
+//
+// Styleguide
+//
+// Variables
+//
+@import "var";
+@import "vendor/bootstrap";
+@import "compass";
+@import "compass/css3";
+//
+
+$page-width: 1280px;
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.containter {
+  width: $page-width;
+  margin: 20px auto;
+}
+
+body .styleguide {
+  h1.styleguide-title {
+    color: $brand-primary;
+    font-size: 32px;
+    padding: 0 15px;
+  }
+  footer {
+    padding: 15px 0;
+    border-top: 1px solid $table-border-color;
+    .block-logo {
+      a {
+        width: 151px;
+        height: 34px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAiCAYAAABSmEu/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABXRJREFUeNrsXD2O2zgUpoIpt2GqreUjaI+gOYKSaqsANnIC+QjyCRYWsNVWsY/gOYJ0BKtONWy2XMCRAHLz/PmRopyhR7L1AM6MrafHv4/vj+REp9NJzPRY9D17Mn8mbakCVVM/RVG0bP/YvpHAaKLjjWOwaEszpQ5cqSS+BGzS3x/mdfyw9Ftb/gwk+9+2/NPpx7otawuTbEtOVV1b9vO83AV91gALQd86gBlw1RammAHXZp6Xu6CvAWX/1f14msf4YemP0BXMPtdM70adWTyR4ooqKV/u4MuBl/PxTInJd/SdWPOnhHdJ5B+BvysFeY+LFjn5OBYo9+iQd2DacCDtpJQyfC7KcLy7aHFsZWxmUWoQIBilhT8h/A0BpA3UXXluy8sVi+wAsjsZnxi+nW6XsIAo1eDo3lVEVgOLJnakQzL47AyySF7rJvT7/r9JmMXCASwOAGZylI6A18wEDc3pJRZgPRNwUABSYDW6DRsGZKidyh4A0QWYArCaAX05BSrVlH0uChjl4Osm8qP+3ZUFaKrYoVl8gFVqYAkGtDG0Y6F/r3WbapCdXwGuDBbckNRQ0KTpVMG1AsDYwLUXfM5uzWgOX2BJAMzKYe5c7VAalA2Yavq8hPoTS130HV9wBU+aThFcK2ZV28jGV19pCiUAdO3wpVB72rRvCSYucWihjDGJmUd/OQqeNJ0auOqBA/jyRvXuAFiqpx0p+Fn1gDam8KyGqFM4Pg8Zm+BJ06mBawhYVOAodtvz3Ja+6XN8pSPyQ+cdgThkc71LmkaBSj1FcDUjAZcxUVkg4KI2Uoxp5KLEUdO8/WMH6rOezAIiwhcGyAoWRPkLC8g46UsCrjWYxCGO/P95p0cAVzIBcH0SPzf0M9Jmk+RdMQBJPBx6X6LgMhorg+dWTf1eSdP3NovSMw0wJnO8YpzqzBGNxj19xETm0uJr1pCySK4wiTdNmoYEl3JENYaGZNzHFLGue/qBfpKrn7ln0LK3aPt6QKBz06RpSHBhFnwnzvfKdg7QjZ02oM1i8MUUmEJzNj2HSO8gLvNUtqCltJi+0SZNQ4Jrw0RX5hTBIVCkdWs/zGUeN+DIGwDSkw5pj0YUHk67b7Bw86RpSHDV4nIzl9Nu64mCizuFi8d4Vrr0pUVKnXfy4RO+jjzQzZOmQ6NFBWDoyzt14PmoVzWXHGx6oimsr/aYcF+wuuSiHOWQ4QOIUmupxEPDuyi+UmsJcYOTpn001atgj0I7Ynq7hbmwMdKrZWNJRcw0XsJtJNfpXjHGk6iz5hoXUXdiKc4PPy5cJnmqN+eXJOp7taQTpFbhNDKKLTmeE5HFrcZKP0d5+BnrN2fa6dn1LXzm6kuAp2B4Ct1v0/7M8f7OMo6075XFH+PO3fdqrbFqLh9g0QHfMoNLByXVE30Ul5cXChiowjJwFXxfwaRtmfckmQjThleLnBRMzysB65IBmCSL4QT9p301uw8cwHDcKi1PeoDr4KMBpgguo7FoMhQ7zH3HgfBVF/QpjhZwJcSppdskeQ8AaH207TumTVtxuQWD7ZQODZIz35sxk45+5hZ5mTi//eSdGxzl7R8XwqIokmTAbCGyZMJ3k++JCY8Ul6cHlPh5fawvxL/2SI3rPUlAtmX62EB7N5b3KS3gGYLsrA4Y/7v6VwkfPCdmIc4Phy0YHgkrsADgKWbyJAHZe5AiiwEPwDUeIFUW36pgeBqmjtU9Ryd94CoJWMxvvBxrdvDpJYWcUfmlOP/HJssrEoNvTdg/c/G1GvC+IlFeTMwZBdVenJ+WKIT9RMT9kIdDloMzm3tEi0fLwA2JFhOLrzTU55IOn8sAq4JoTzKybYDDaPFgiQS33PiM0Vd6q/JDgAEAixEaprmDjlMAAAAASUVORK5CYII=);
+        display: inline-block;
+      }
+    }
+  }
+
+  /* UI item */
+  .list-ui-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    .ui-item-header {
+      h2 {
+        color: lighten($gray, 30%);
+        font-weight: bold;
+        text-transform: capitalize;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $table-border-color;
+        &.active {
+          color: $brand-primary;
+          border-bottom-color: $brand-primary;
+        }
+      }
+    }
+    .ui-item-content {
+      @extend .clearfix;
+    }
+    /* List items content */
+    /* -------------------------------------*/
+    /* Theme Variables ---------------------*/
+    &.theme-variables {
+      .gradients{
+        color: #fff;
+        padding: $gap;
+        text-align: center;
+        margin-bottom: 12px;
+        &.one {
+          @include gradient-vertical(lighten($c-blue,20%), $c-blue,0%,100%);
+        }
+        &.two {
+          @include gradient-vertical(lighten($c-green,20%),$c-green,0%, 100%);
+        }
+        &.three {
+          @include gradient-vertical(lighten($c-pink,20%),$c-pink, 0%,100%);
+        }
+        &.four {
+          @include gradient-vertical(lighten($c-orange,20%), $c-orange,  0%,  100%);
+        }
+        &.five {
+          @include gradient-vertical(lighten($c-red,20%), $c-red, 0%, 100%);
+        }
+        &.six {
+          @include gradient-vertical(lighten($c-yellow,20%), $c-yellow,  0%, 100%);
+        }
+        &.seven {
+          @include gradient-vertical(lighten($c-black,20%), $c-black,  0%,  100%);
+        }
+        &.eight {
+          @include gradient-vertical(lighten($c-gray,20%),$c-gray,  0%,  100%);
+        }
+      }
+      .color {
+        color: #fff;
+        padding: $gap;
+        text-align: center;
+        margin-bottom: 12px;
+        &.one {
+          background-color:$c-blue;
+        }
+        &.two {
+          background-color:$c-green;
+        }
+        &.three {
+          background-color:$c-pink;
+        }
+        &.four {
+          background-color:$c-orange;
+        }
+        &.five {
+          background-color:$c-red;
+        }
+        &.six {
+          background-color:$c-yellow;
+        }
+        &.seven {
+          background-color:$c-black;
+        }
+        &.eight {
+          background-color:$c-gray;
+        }
+      }
+      .pattern{
+        color: #000;
+        padding: 18px;
+        text-align: left;
+        margin-bottom: 14px;
+        background:$c-gray left top repeat;
+        &.one {
+          background-image:url(../images/patterns/pattern_1.png);
+        }
+        &.two {
+          color: #fff;
+          background-image:url(../images/patterns/pattern_2.png);
+        }
+        &.three {
+          background-image:url(../images/patterns/pattern_3.png);
+        }
+        &.four {
+          background-image:url(../images/patterns/pattern_4.png);
+        }
+        &.five {
+          background-image:url(../images/patterns/pattern_5.png);
+        }
+        &.six {
+          background-image:url(../images/patterns/pattern_6.png);
+        }
+      }
+    }
+    /* Fonts -------------------------------*/
+    /* Tables ------------------------------*/
+    .ui-item-example {
+      margin-bottom: 25px;
+      padding: 15px;
+      border: 1px solid #DDDDDD;
+      border-radius: 4px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: 'example';
+        top: -15px;
+        right: 15px;
+        padding: 5px;
+        background: #fff;
+        color: #A5A3A3;
+      }
+      button {
+        margin-bottom: 5px;
+      }
+      ul.toggle-tabs {
+        @extend .clearfix;
+      }
+    }
+  }
+}

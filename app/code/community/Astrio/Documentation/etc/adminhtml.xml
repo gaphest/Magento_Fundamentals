@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <astrio translate="title" module="astrio_documentation">
+            <title>Astrio</title>
+            <sort_order>71</sort_order>
+            <children>
+                <documentation translate="title" module="astrio_documentation">
+                    <title>Documentation</title>
+                    <sort_order>22</sort_order>
+                    <children>
+                        <document translate="title" module="astrio_documentation">
+                            <title>Document</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/documentation_document/index</action>
+                        </document>
+                        <category translate="title" module="astrio_documentation">
+                            <title>Category</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/documentation_category/index</action>
+                        </category>
+                    </children>
+                </documentation>
+            </children>
+        </astrio>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <astrio translate="title" module="astrio_documentation">
+                        <title>Astrio</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <documentation translate="title" module="astrio_documentation">
+                                <title>Documentation</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <document translate="title" module="astrio_documentation">
+                                        <title>Document</title>
+                                        <sort_order>10</sort_order>
+                                    </document>
+                                    <category translate="title" module="astrio_documentation">
+                                        <title>Category</title>
+                                        <sort_order>20</sort_order>
+                                    </category>
+                                </children>
+                            </documentation>
+                        </children>
+                    </astrio>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <astrio_documentation translate="title" module="astrio_documentation">
+                                        <title>Astrio Documentation</title>
+                                        <sort_order>10</sort_order>
+                                    </astrio_documentation>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

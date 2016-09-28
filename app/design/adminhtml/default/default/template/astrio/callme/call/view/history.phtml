@@ -1,0 +1,55 @@
+<?php
+
+/** @var $this Astrio_Callme_Block_Adminhtml_Call_View_History */
+
+?>
+<div id="call_history_block">
+
+    <div id="history_form" class="call-history-form">
+        <div><?php echo $this->__('Add Call Comments') ?></div>
+        <span class="field-row">
+            <label class="normal" for="history_status"><?php echo $this->__('Status') ?></label><br/>
+            <select name="history[status]" class="select" id="history_status">
+            <?php foreach ($this->getStatuses() as $_status=>$_label): ?>
+                <option value="<?php echo $_status ?>"<?php if($_status==$this->getCall()->getStatus()): ?> selected="selected"<?php endif; ?>><?php echo $_label ?></option>
+            <?php endforeach; ?>
+            </select>
+        </span>
+        <span class="field-row">
+            <label class="normal" for="history_comment"><?php echo $this->__('Comment') ?></label>
+            <textarea name="history[comment]" rows="3" cols="5" style="height:6em; width:99%;" id="history_comment"></textarea>
+        </span>
+        <div class="f-left">
+          <input name="history[is_admin_notified]" type="checkbox" id="history_notify" value="1" /><label class="normal" for="history_notify"> <?php echo $this->__('Notify Admin by Email') ?></label><br />
+        </div>
+        <div class="f-right">
+            <?php echo $this->getChildHtml('submit_button') ?>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="divider"></div>
+
+    <ul class="note-list">
+    <?php foreach ($this->getCall()->getStatusHistoryCollection(true) as $_item): ?>
+        <li>
+            <strong><?php echo $this->helper('core')->formatDate($_item->getCreatedAtDate(), 'medium') ?></strong>
+            <?php echo $this->helper('core')->formatTime($_item->getCreatedAtDate(), 'medium') ?><span class="separator">|</span><strong><?php echo $_item->getStatusLabel() ?></strong><span class="separator">|</span><strong><?php echo $_item->getUsername() ?></strong>
+            <br/><small><?php echo $this->__('Admin') ?>
+            <strong class="subdue">
+                <?php if ($_item->getIsAdminNotified()): ?>
+                    <?php echo $this->__('Notified') ?>
+                    <img src="<?php echo $this->getSkinUrl('images/ico_success.gif') ?>" width="16" height="16" alt="" />
+                <?php else: ?>
+                    <?php echo $this->__('Not Notified') ?>
+                <?php endif; ?>
+            </strong></small>
+            <?php if ($_item->getComment()): ?>
+                <br/><?php echo $_item->getEscapeComment() ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <script type="text/javascript">
+    if($('call_status'))$('call_status').update('<?php echo $this->getCall()->getStatusLabel() ?>');
+    </script>
+</div>

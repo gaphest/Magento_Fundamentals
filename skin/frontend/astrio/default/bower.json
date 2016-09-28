@@ -1,0 +1,29 @@
+{
+  "name": "Astrio bower dependencies",
+  "version": "1.0.0",
+  "authors": [
+    "Astrio"
+  ],
+  "description": "Set of js libraries",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "magento"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "owl-carousel": "~1.3.2",
+    "browser-update": "~1.0.4",
+    "magnific-popup": "~1.0.0",
+    "respond": "~1.4.2",
+    "bootstrap-sass": "~3.3.3",
+    "underscore": "~1.7.0"
+  }
+}

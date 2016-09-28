@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var $this Astrio_Core_Block_Adminhtml_Process_List_Additional
+ */
+?>
+<br/>
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <td><h3><?php echo Mage::helper('astrio_core')->__('Additional Index Management') ?></h3></td>
+            <td class="form-buttons"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<table class="form-list" style="margin-top: -5px;">
+    <tr>
+        <td class="scope-label">
+            <button onclick="setLocation('<?php echo $this->getReindexAllUrl()?>')" type="button" class="scalable">
+                <span>
+                    <span>
+                        <span><?php echo Mage::helper('astrio_core')->__('Reindex All') ?></span>
+                    </span>
+                </span>
+            </button>
+        </td>
+        <td class="scope-label">
+            <?php echo Mage::helper('astrio_core')->__('Reindex All')?>
+        </td>
+    </tr>
+</table>

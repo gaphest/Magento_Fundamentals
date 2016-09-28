@@ -1,0 +1,39 @@
+<?php
+/** @var  Astrio_Core_Block_Adminhtml_Rewrites $this */
+?>
+<div class="grid">
+    <table class="table">
+        <thead>
+        <tr class="headings">
+            <th><?php echo $this->__('Target')?></th>
+            <th><?php echo $this->__('Rewrites')?></th>
+            <th><?php echo $this->__('Current Class')?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($this->getRewritesList() as $group => $modules):?>
+            <tr>
+                <td colspan="3"><h2><?php echo $group?></h2></td>
+            </tr>
+            <?php foreach($modules as $module => $files):?>
+                <?php foreach($files as $file => $rewrites):?>
+                    <?php $rewrites['rewrites'] = array_unique($rewrites['rewrites'])?>
+                    <tr <?php echo (count($rewrites['rewrites']) > 1) ? 'style="background-color:#ffa49a"' : ''?>>
+                        <td><?php echo $module . '/' . $file?></td>
+                        <td >
+                            <?php foreach($rewrites['rewrites'] as $rewrite):?>
+                                <?php echo $rewrite?><br>
+                            <?php endforeach?>
+                        </td>
+                        <td>
+                            <?php echo $rewrites['current']?>
+                        </td>
+                    </tr>
+                <?php endforeach?>
+            <?php endforeach?>
+        <?php endforeach?>
+        </tbody>
+    </table>
+</div>
+
+

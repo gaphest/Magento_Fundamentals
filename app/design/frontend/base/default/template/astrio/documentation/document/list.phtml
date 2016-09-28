@@ -1,0 +1,23 @@
+<?php /** @var Astrio_Documentation_Block_Document_List $this */ ?>
+<h2><?php echo $this->__('Documents') ?></h2>
+<?php $_collection = $this->getCollection() ?>
+<ul class="downloads_list">
+    <?php if ($_collection->getSize()): ?>
+        <?php foreach ($_collection as $_document): ?>
+            <li>
+                <a href="<?php echo $_document->getDownloadUrl() ?>" download="<?php echo $_document->getDownloadName() ?>" target="_blank" class="download_title"><?php echo $_document->getName() ?></a>
+                <em class="download_type"><?php echo $_document->getFileType() ?>, <?php echo $_document->getFormattedSize() ?> MB</em>
+                <span class="download_desc"><?php echo $_document->getDescription() ?></span>
+                <div class="download_link">
+                    <a href="<?php echo $_document->getDownloadUrl() ?>" download="<?php echo $_document->getDownloadName() ?>" target="_blank" class="button">Download Software</a>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <li>
+            <?php echo Mage::helper('astrio_documentation')->__('There are no documents available.') ?>
+        </li>
+    <?php endif ?>
+</ul>
+
+<?php echo $this->getPages() ?>

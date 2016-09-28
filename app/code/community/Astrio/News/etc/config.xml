@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Astrio_News>
+            <version>1.0.0</version>
+        </Astrio_News>
+    </modules>
+
+    <global>
+        <blocks>
+            <astrio_news>
+                <class>Astrio_News_Block</class>
+            </astrio_news>
+        </blocks>
+
+        <helpers>
+            <astrio_news>
+                <class>Astrio_News_Helper</class>
+            </astrio_news>
+        </helpers>
+
+        <models>
+            <astrio_news>
+                <class>Astrio_News_Model</class>
+                <resourceModel>astrio_news_resource</resourceModel>
+            </astrio_news>
+            <astrio_news_resource>
+                <class>Astrio_News_Model_Resource</class>
+                <entities>
+                    <category>
+                        <table>astrio_news_category_entity</table>
+                    </category>
+                    <news>
+                        <table>astrio_news_entity</table>
+                    </news>
+                    <news_store>
+                        <table>astrio_news_entity_store</table>
+                    </news_store>
+                    <news_category>
+                        <table>astrio_news_entity_category</table>
+                    </news_category>
+                    <eav_attribute>
+                        <table>astrio_news_eav_attribute</table>
+                    </eav_attribute>
+                </entities>
+            </astrio_news_resource>
+        </models>
+
+        <resources>
+            <astrio_news_setup>
+                <setup>
+                    <module>Astrio_News</module>
+                    <class>Astrio_News_Model_Resource_Setup</class>
+                </setup>
+            </astrio_news_setup>
+        </resources>
+
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <astrio_news>
+                        <class>Astrio_News_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </astrio_news>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <astrio_news after="Mage_Adminhtml">Astrio_News_Adminhtml</astrio_news>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <astrio_news>
+                    <file>astrio_news.xml</file>
+                </astrio_news>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Astrio_News>
+                    <files>
+                        <default>Astrio_News.csv</default>
+                    </files>
+                </Astrio_News>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <frontend>
+        <routers>
+            <astrio_news>
+                <use>standard</use>
+                <args>
+                    <module>Astrio_News</module>
+                    <frontName>astrio_news</frontName>
+                </args>
+            </astrio_news>
+        </routers>
+        <layout>
+            <updates>
+                <astrio_news>
+                    <file>astrio_news.xml</file>
+                </astrio_news>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Astrio_News>
+                    <files>
+                        <default>Astrio_News.csv</default>
+                    </files>
+                </Astrio_News>
+            </modules>
+        </translate>
+    </frontend>
+
+    <default>
+        <astrio_news>
+            <seo>
+                <route_url_key>news</route_url_key>
+                <category_route_url_key>category</category_route_url_key>
+                <url_suffix>html</url_suffix>
+                <list_meta_title>News</list_meta_title>
+                <use_canonical_tag>1</use_canonical_tag>
+            </seo>
+        </astrio_news>
+    </default>
+</config>

@@ -1,0 +1,42 @@
+<?php
+/**
+ * default template for featured product
+ *
+ * @category   Astrio
+ * @package    Astrio_Featured
+ */
+/**
+ * @var $this Astrio_Featuredcategory_Block_Featuredcategory
+ */
+?>
+<?php
+/**
+ * @var $_categoryCollection Mage_Catalog_Model_Resource_Category_Collection
+ * @var $_helper Astrio_Featuredcategory_Helper_Data
+ */
+$_categoryCollection = $this->getCategoryCollection();
+$_helper = $this->helper('astrio_featuredcategory');
+?>
+<?php if ($_categoryCollection->count()): ?>
+    <div class="featuredcategory">
+        <h2><?php echo $this->__('Featured category') ?></h2>
+        <?php foreach ($_categoryCollection as $_category): ?>
+            <div class="item_featuredcategory">
+                <?php if($_category->getImage()): ?>
+                    <a href="<?php echo $_category->getUrl(); ?>">
+                        <img src="<?php echo $_category->getImageUrl() ?>" width="210" alt="<?php echo $_category->getName() ?>" />
+                    </a>
+                <?php endif; ?>
+                <h3><a href="<?php echo $_category->getUrl(); ?>"><?php echo $_category->getName(); ?></a></h3>
+                <div class="item_featuredcategory_sub">
+                    <?php $_subCategoryCollection = $this->getChildrenCategories($_category); ?>
+                    <ul>
+                        <?php foreach ($_subCategoryCollection as $_subcategory): ?>
+                            <li><h4><a href="<?php echo $_subcategory->getUrl() ?>"><?php echo $_subcategory->getName() ?></a></h4></li>
+                        <?php endforeach?>
+                    </ul>
+                </div>
+            </div>
+        <?php endforeach?>
+    </div>
+<?php endif; ?>

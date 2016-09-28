@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var $this Astrio_Brand_Block_Brand_View
+ * @var Astrio_Brand_Helper_Data $_brandsHelper
+ * @var Astrio_Brand_Helper_Image $_brandsImageHelper
+ * @var Astrio_Brand_Helper_Output $_brandsOutputHelper
+ */
+$_brandsHelper = $this->helper('astrio_brand');
+$_brandsImageHelper = $this->helper('astrio_brand/image');
+$_brandsOutputHelper = $this->helper('astrio_brand/output');
+$_brand = $this->getBrand();
+?>
+<?php if ($_brand->getImage()) : ?>
+    <div class="brand-image">
+        <img    src="<?php echo $_brandsImageHelper->init($_brand, 'image')->resize(160) ?>"
+                alt="<?php echo $this->escapeHtml($_brand->getName()) ?>"/>
+    </div>
+<?php endif; ?>
+<?php if($description = $_brand->getDescription()): ?>
+    <div class="brand-description">
+        <?php echo $_brandsOutputHelper->brandAttribute($_brand, $description, 'description') ?>
+    </div>
+<?php endif ?>
