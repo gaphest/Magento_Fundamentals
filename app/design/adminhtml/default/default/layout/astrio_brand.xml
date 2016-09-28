@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>astrio/brand/adminhtml/brand.js</script></action>
+        </reference>
+    </default>
+
+    <adminhtml_brand_index>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>Brand</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/brand</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_brand/adminhtml_brand" name="brands_list">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_brand_index>
+
+    <adminhtml_brand_new>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/brand</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_brand/adminhtml_brand_edit" name="brand_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="astrio_brand/adminhtml_brand_edit_tabs" name="brand_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_brand/adminhtml_brand_edit_js" template="astrio/brand/js.phtml" name="brand_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_brand_new>
+
+    <adminhtml_brand_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/brand</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_brand/adminhtml_brand_edit" name="brand_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"/>
+            <block type="astrio_brand/adminhtml_brand_edit_tabs" name="brand_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_brand/adminhtml_brand_edit_js" template="astrio/brand/js.phtml" name="brand_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_brand_edit>
+
+    <adminhtml_brand_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="astrio_brand/adminhtml_brand_grid" name="admin.brand.grid"/>
+        </block>
+    </adminhtml_brand_grid>
+
+    <adminhtml_brand_products>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="astrio_brand/adminhtml_brand_edit_tab_product" name="astrio.brand.edit.tab.products"/>
+            <block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+                <reference name="product_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>astrio.brand.edit.tab.products</grid_block_name>
+                        <data_callback>getSelectedProducts</data_callback>
+                        <hidden_input_name>product_ids</hidden_input_name>
+                        <reload_param_name>selected_products</reload_param_name>
+                    </action>
+                    <!--action method="addColumnInputName">
+                        <input_name>product_id</input_name>
+                    </action-->
+                </reference>
+            </block>
+        </block>
+    </adminhtml_brand_products>
+
+    <adminhtml_brand_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="astrio_brand/adminhtml_brand_edit_tab_product" name="astrio.brand.edit.tab.products"/>
+        </block>
+    </adminhtml_brand_productsgrid>
+
+    <adminhtml_cache_index>
+        <reference name="content">
+            <block type="astrio_brand/adminhtml_cache_additional" name="astrio_brand.cache.additional" template="astrio/brand/system/cache/additional.phtml" />
+        </reference>
+    </adminhtml_cache_index>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <astrio translate="title" module="astrio_news">
+            <title>Astrio</title>
+            <sort_order>71</sort_order>
+            <children>
+                <news translate="title">
+                    <title>News</title>
+                    <sort_order>10</sort_order>
+                    <children>
+                        <category translate="title">
+                            <title>Categories</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/news_category</action>
+                        </category>
+                        <news translate="title">
+                            <title>News</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/news</action>
+                        </news>
+                    </children>
+                </news>
+            </children>
+        </astrio>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <astrio translate="title" module="astrio_news">
+                        <title>Astrio</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <news translate="title" module="astrio_news">
+                                <title>News</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <category translate="title" module="astrio_news">
+                                        <title>Category</title>
+                                        <sort_order>10</sort_order>
+                                    </category>
+                                    <news translate="title" module="astrio_news">
+                                        <title>News</title>
+                                        <sort_order>20</sort_order>
+                                    </news>
+                                </children>
+                            </news>
+                        </children>
+                    </astrio>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <astrio_news translate="title" module="astrio_news">
+                                        <title>News</title>
+                                        <sort_order>10</sort_order>
+                                    </astrio_news>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

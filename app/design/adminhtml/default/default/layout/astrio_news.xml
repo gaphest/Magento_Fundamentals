@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<layout>
+
+    <adminhtml_news_index>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>News</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_news" name="news_list">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_news_index>
+
+    <adminhtml_news_new>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_news_edit" name="news_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="astrio_news/adminhtml_news_edit_tabs" name="news_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_news/adminhtml_news_edit_js" template="astrio/news/news/js.phtml" name="news_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_news_new>
+
+    <adminhtml_news_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_news_edit" name="news_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"/>
+            <block type="astrio_news/adminhtml_news_edit_tabs" name="news_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_news/adminhtml_news_edit_js" template="astrio/news/news/js.phtml" name="news_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_news_edit>
+
+    <adminhtml_news_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="astrio_news/adminhtml_news_grid" name="admin.news.grid"/>
+        </block>
+    </adminhtml_news_grid>
+
+    <adminhtml_news_category_index>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>News Categories</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news/category</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_category" name="news_list">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_news_category_index>
+
+    <adminhtml_news_category_new>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news/category</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_category_edit" name="news_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="astrio_news/adminhtml_category_edit_tabs" name="news_category_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_news/adminhtml_category_edit_js" template="astrio/news/category/js.phtml" name="news_category_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_news_category_new>
+
+    <adminhtml_news_category_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive"><menupath>astrio/news/category</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_category_edit" name="news_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"/>
+            <block type="astrio_news/adminhtml_category_edit_tabs" name="news_category_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="astrio_news/adminhtml_category_edit_js" template="astrio/news/category/js.phtml" name="news_category_js"/>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_news_category_edit>
+
+    <adminhtml_news_category_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="astrio_news/adminhtml_category_grid" name="admin.news.category.grid"/>
+        </block>
+    </adminhtml_news_category_grid>
+
+    <adminhtml_cache_index>
+        <reference name="content">
+            <block type="astrio_news/adminhtml_cache_additional" name="astrio_news.cache.additional" template="astrio/news/system/cache/additional.phtml" />
+        </reference>
+    </adminhtml_cache_index>
+</layout>

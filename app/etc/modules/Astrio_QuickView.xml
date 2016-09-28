@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Astrio_QuickView>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Astrio_Core/>
+            </depends>
+        </Astrio_QuickView>
+    </modules>
+</config>

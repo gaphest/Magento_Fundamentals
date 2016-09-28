@@ -1,0 +1,18 @@
+.call-me-wrapper{
+  margin:10px 0;
+}
+
+#callme-popup{
+  position: relative;
+  width: 360px;
+  max-width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  .legend,
+  .form-list li{
+    padding:3px 10px;
+  }
+  .legend{
+    padding-right: 30px;
+  }
+}

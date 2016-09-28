@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <adminhtml_call_index>
+        <reference name="content">
+            <block type="astrio_callme/adminhtml_call" name="astrio_callme.call" />
+        </reference>
+    </adminhtml_call_index>
+
+    <adminhtml_call_view>
+        <reference name="content">
+            <block type="astrio_callme/adminhtml_call_view" name="astrio_callme.call.view" />
+        </reference>
+        <reference name="left">
+            <block type="astrio_callme/adminhtml_call_view_tabs" name="astrio_callme.call.view.tabs">
+                <block type="astrio_callme/adminhtml_call_view_tab_info" name="astrio_callme.call.view.tab.info" template="astrio/callme/call/view/tab/info.phtml">
+                    <block type="astrio_callme/adminhtml_call_view_history" name="call_history" template="astrio/callme/call/view/history.phtml"/>
+                </block>
+                <action method="addTab"><name>call_info</name><block>astrio_callme.call.view.tab.info</block></action>
+            </block>
+        </reference>
+    </adminhtml_call_view>
+
+    <adminhtml_call_status_index>
+        <reference name="content">
+            <block type="astrio_callme/adminhtml_call_status" name="astrio_callme.call.status" />
+        </reference>
+    </adminhtml_call_status_index>
+
+    <adminhtml_call_status_edit>
+        <reference name="content">
+            <block type="astrio_callme/adminhtml_call_status_edit" name="astrio_callme.call.status.edit" />
+        </reference>
+    </adminhtml_call_status_edit>
+
+    <adminhtml_call_addcomment>
+        <block type="astrio_callme/adminhtml_call_view_history" name="call_history" template="astrio/callme/call/view/history.phtml" output="toHtml"/>
+    </adminhtml_call_addcomment>
+
+</layout>

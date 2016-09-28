@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>astrio/blockcarousel/lib/owl-carousel/owl.carousel.min.js</script></action>
+            <action method="addItem"><type>js_css</type><name>astrio/blockcarousel/lib/owl-carousel/owl.carousel.css</name></action>
+            <action method="addItem"><type>js_css</type><name>astrio/blockcarousel/lib/owl-carousel/owl.theme.css</name></action>
+            <action method="addJs"><script>astrio/blockcarousel/main.js</script></action>
+        </reference>
+    </default>
+
+</layout>

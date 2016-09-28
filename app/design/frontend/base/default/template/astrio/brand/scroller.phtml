@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var Astrio_Brand_Block_Brand_Featured $this
+ * @var Astrio_Brand_Helper_Data $_brandsHelper
+ * @var Astrio_Brand_Helper_Image $_brandsImageHelper
+ * @var Astrio_Brand_Model_Brand $_brand
+ */
+$_brandsHelper = Mage::helper('astrio_brand');
+$_brandsImageHelper = $this->helper('astrio_brand/image');
+$_brands = $this->getCollection();
+?>
+<?php if (count($_brands) > 0): ?>
+    <div class="sc_menu">
+        <ul class="sc_menu">
+            <?php foreach ($_brands as $_brand): ?>
+                <?php if ($_brand->getThumbnail()): ?>
+                    <li>
+                        <a href="<?php echo $_brand->getBrandUrl() ?>">
+                            <img src="<?php echo $_brandsImageHelper->init($_brand, 'thumbnail')->resize(130) ?>"
+                                 alt="<?php echo $this->escapeHtml($_brand->getName()) ?>" />
+                        </a>
+                    </li>
+                <?php endif ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

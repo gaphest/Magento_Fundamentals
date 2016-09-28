@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout>
+
+    <adminhtml_specialproducts_set_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><flag>1</flag></action>
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+        </reference>
+        <reference name="left">
+            <block type="astrio_specialproducts/adminhtml_specialProducts_set_edit_tabs" name="specialproducts_set_edit_tabs">
+                <block type="astrio_specialproducts/adminhtml_specialProducts_set_edit_tab_general" name="specialproducts_set_edit_tab_general"/>
+                <block type="astrio_specialproducts/adminhtml_specialProducts_set_edit_tab_conditions" name="specialproducts_set_edit_tab_conditions"/>
+                <block type="astrio_specialproducts/adminhtml_specialProducts_set_edit_tab_label" name="specialproducts_set_edit_tab_label"/>
+                <block type="astrio_specialproducts/adminhtml_specialProducts_set_edit_tab_page" name="specialproducts_set_edit_tab_page"/>
+
+                <action method="addTab"><name>general</name><block>specialproducts_set_edit_tab_general</block></action>
+                <action method="addTab"><name>conditions</name><block>specialproducts_set_edit_tab_conditions</block></action>
+                <action method="addTab"><name>label</name><block>specialproducts_set_edit_tab_label</block></action>
+                <action method="addTab"><name>page</name><block>specialproducts_set_edit_tab_page</block></action>
+            </block>
+        </reference>
+    </adminhtml_specialproducts_set_edit>
+
+</layout>

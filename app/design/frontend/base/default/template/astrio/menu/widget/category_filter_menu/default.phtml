@@ -1,0 +1,33 @@
+<?php
+/**
+ * Astrio
+ *
+ * @category Astrio
+ * @package Astrio_Menu
+ * @author Eldaniz Gasymov <e.gasymov@astrio.net>
+ */
+/**
+ * @var $this Astrio_Menu_Block_Widget_CategoryFilterMenu
+ */
+$category = $this->getCategory();
+$categoryUrl = $category->getUrl();
+
+$filter = $this->getFilter();
+$paramName = $filter->getRequestVar();
+
+$options = $this->getOptions();
+?>
+<ul class="level0">
+	<li class="level1">
+		<h3>
+			<?php echo $this->getFilterLabel() ?>
+		</h3>
+	</li>
+	<?php foreach ($options as $option): ?>
+		<li class="level1">
+			<a href="<?php echo $categoryUrl . '?' . $paramName . '=' . rawurlencode($option['value'])?>">
+				<?php echo $option['label'] ?> (<?php echo $option['count'] ?>)
+			</a>
+		</li>
+	<?php endforeach ?>
+</ul>

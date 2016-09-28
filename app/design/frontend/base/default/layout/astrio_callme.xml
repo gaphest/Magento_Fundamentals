@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>astrio/callme/js/callme.js</name></action>
+            <block type="core/template" name="astrio_callme.init" template="astrio/callme/init.phtml" />
+        </reference>
+    </default>
+
+    <astrio_callme_ajax_showform>
+        <remove name="right"/>
+        <remove name="left"/>
+        <block type="astrio_callme/form" name="root" output="toHtml" template="astrio/callme/popup.phtml" />
+    </astrio_callme_ajax_showform>
+
+    <astrio_callme_index_index translate="label">
+        <label>Call Me</label>
+        <remove name="right"/>
+        <remove name="left"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="astrio_callme/form" name="astrio_callme.form"  template="astrio/callme/form.phtml" />
+        </reference>
+    </astrio_callme_index_index>
+
+</layout>

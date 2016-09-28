@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>css/menu.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+		</reference>
+		<reference name="top.menu">
+			<remove name="catalog.topnav" />
+			<block type="astrio_menu/menu" name="astrio_menu" template="astrio/menu/menu.phtml"/>
+		</reference>
+	</default>
+</layout>

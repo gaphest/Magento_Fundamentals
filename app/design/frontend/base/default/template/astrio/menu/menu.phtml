@@ -1,0 +1,56 @@
+<?php
+/**
+ * @var $this Astrio_Menu_Block_Menu
+ * @var $helper Astrio_Menu_Helper_Data
+ * @var $menuItem Astrio_Menu_Model_Menu_Item
+ * @var $firstItem Astrio_Menu_Model_Menu_Item
+ * @var $lastItem Astrio_Menu_Model_Menu_Item *
+ * @var $menuItemBlock Astrio_Menu_Block_Menu_Item
+ */
+$helper = Mage::helper('astrio_menu');
+$sectionsCount = $helper->getMenuItemSectionsCount();
+
+$menuItems = $this->getMenuItems();
+
+$firstItem = $menuItems->getFirstItem();
+$lastItem = $menuItems->getLastItem();
+
+$categoryImageUrlPath = Mage::getBaseUrl('media').'catalog/category/';
+?>
+<nav id="nav">
+	<ol class="custom-menu nav-primary">
+		<?php foreach($menuItems as $menuItem): ?>
+			<?php
+
+			$additionalClasses = array();
+			if($firstItem->getId() == $menuItem->getId()) {
+				$additionalClasses[] = 'first';
+			}
+
+			if($lastItem->getId() == $menuItem->getId()) {
+				$additionalClasses[] = 'last';
+			}
+			/*
+			if ($menuItem->getItemType() == Astrio_Menu_Model_Menu_Item_Source_ItemType::CATEGORY) {
+				$category = $menuItem->getCategory(); // false | Mage_Catalog_Model_Category
+			}
+
+			if ($menuItem->getItemType() == Astrio_Menu_Model_Menu_Item_Source_ItemType::CMS_PAGE) {
+				$cmsPage = $menuItem->getCmsPage(); // false | Mage_Cms_Model_Page
+			}
+			*/
+			?>
+            <?php $menuItemContent = $this->getMenuItemContent($menuItem) ?>
+			<li class="level-top level0 <?php echo $menuItem->getClassLink() ?> menu-item-<?php echo $menuItem->getId() ?> nav-<?php echo $menuItem->getId() ?> <?php echo implode(' ', $additionalClasses) ?> <?php if($menuItemContent): echo 'parent'; endif; ?>">
+				<a href="<?php echo $menuItem->getUrl() ?>" class="level-top level0 <?php if($menuItemContent): echo 'has-children'; endif; ?> <?php echo $this->getExtraString($menuItem) ?>">
+					<?php echo $menuItem->getName() ?>
+				</a>
+				<?php if($menuItemContent): ?>
+					<ul class="dropdown">
+						<?php echo $menuItemContent ?>
+					</ul>
+				<?php endif ?>
+			</li>
+		<?php endforeach ?>
+	</ol>
+</nav>

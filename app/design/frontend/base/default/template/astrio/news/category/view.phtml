@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_Category_View
+ * @var $_imageHelper Astrio_News_Helper_Image
+ * @var $_outputHelper Astrio_News_Helper_Output
+ */
+$_category = $this->getCategory();
+
+$_imageHelper = $this->helper('astrio_news/image');
+$_outputHelper = $this->helper('astrio_news/output');
+?>
+
+<div class="page-title">
+    <h1><?php echo $_category->getName() ?></h1>
+</div>
+<div class="news-category-detail">
+    <div class="news-category-image">
+        <img src="<?php echo $_imageHelper->init($_category, 'image')->resize(400) ?>" alt=""/>
+    </div>
+    <div class="news-category-description">
+        <?php if($description = $_category->getDescription()): ?>
+            <?php echo $_outputHelper->categoryAttribute($_category, $description, 'description') ?>
+        <?php endif ?>
+    </div>
+    <?php echo $this->getChild('news_list')->setCategory($_category)->toHtml() ?>
+</div>

@@ -1,0 +1,34 @@
+<?php
+/**
+ * @var Astrio_Brand_Block_Brand_Menu $this
+ * @var Astrio_Brand_Helper_Data $brandsHelper
+ * @var Astrio_Brand_Model_Brand $brand
+ */
+$brandsHelper = $this->helper('astrio_brand');
+$brands = $this->getCollection();
+?>
+<?php if (count($brands) > 0): ?>
+<ul class="inner-top-ul-cols">
+    <li class="title">
+        <h3>
+            <a href="<?php echo $brandsHelper->getBrandsListUrl() ?>">
+                <?php echo $this->__('Shop by brand') ?>
+            </a>
+        </h3>
+    </li>
+
+    <?php foreach ($brands as $brand) { ?>
+    <li>
+        <a href="<?php echo $brand->getBrandUrl() ?>">
+            <?php echo $brand->getName() ?>
+        </a>
+    </li>
+    <?php } //endforeach ?>
+
+    <li>
+        <a href="<?php echo $brandsHelper->getBrandsListUrl() ?>">
+            <?php echo $this->__('View All') ?>
+        </a>
+    </li>
+</ul>
+<?php endif ?>

@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Astrio_Brand>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog />
+            </depends>
+        </Astrio_Brand>
+    </modules>
+</config>

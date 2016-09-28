@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_Adminhtml_Cache_Additional
+ */
+?>
+<table class="form-list" style="margin-top: -5px;">
+    <tr>
+        <td class="scope-label">
+            <button onclick="setLocation('<?php echo $this->getCleanImagesUrl()?>')" type="button" class="scalable">
+                <span>
+                    <span>
+                        <span><?php echo Mage::helper('astrio_news')->__('Flush News Images Cache') ?></span>
+                    </span>
+                </span>
+            </button>
+        </td>
+        <td class="scope-label">
+            <?php echo Mage::helper('astrio_news')->__('Pregenerated news images files.')?>
+        </td>
+    </tr>
+</table>
+<?php echo $this->getChildHtml() ?>

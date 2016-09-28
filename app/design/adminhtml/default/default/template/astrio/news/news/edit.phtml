@@ -1,0 +1,94 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_Adminhtml_News_Edit
+ * Template for Astrio_News_Block_Adminhtml_News_Edit
+ */
+?>
+<div class="content-header">
+    <h3 class="icon-head head-news"><?php echo $this->getHeader() ?></h3>
+    <p class="content-buttons form-buttons"><?php echo $this->getBackButtonHtml() ?>
+        <?php echo $this->getCancelButtonHtml() ?>
+        <?php if($this->getNewsId()): ?>
+            <?php echo $this->getDeleteButtonHtml() ?>
+        <?php endif; ?>
+        <?php echo $this->getSaveButtonHtml() ?>
+        <?php echo $this->getSaveAndEditButtonHtml() ?>
+    </p>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="news_edit_form" enctype="multipart/form-data">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div style="display:none"></div>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var newsTemplateSyntax = /(^|.|\r|\n)({{(\w+)}})/;
+    var newsForm = new varienForm('news_edit_form', '<?php echo $this->getValidationUrl() ?>');
+    newsForm._processValidationResult = function(transport) {
+        var response = transport.responseText.evalJSON();
+        if (response.error){
+            if (response.attribute && $(response.attribute)) {
+                $(response.attribute).setHasError(true, newsForm);
+                Validation.ajaxError($(response.attribute), response.message);
+                if (!Prototype.Browser.IE){
+                    $(response.attribute).focus();
+                }
+            }
+            else if ($('messages')) {
+                $('messages').innerHTML = '<ul class="messages"><li class="error-msg"><ul><li>' + response.message + '</li></ul></li></ul>';
+            }
+        }
+        else{
+            newsForm._submit();
+        }
+    };
+    function saveAndContinueEdit(urlTemplate) {
+        var template = new Template(urlTemplate, newsTemplateSyntax);
+        var url = template.evaluate({tab_id:news_info_tabsJsTabs.activeTab.id});
+        newsForm.submit(url);
+    }
+    function setSettings(urlTemplate, setElement, typeElement) {
+        var template = new Template(urlTemplate, newsTemplateSyntax);
+        setLocation(template.evaluate({attribute_set:$F(setElement),type:$F(typeElement)}));
+    }
+
+    function setSuperSettings(urlTemplate, attributesClass, validateField) {
+        var attributesFields = $$('.' + attributesClass);
+        var attributes = Form.serializeElements(attributesFields, true).attribute;
+        if(typeof attributes == 'string') {
+            attributes = [attributes];
+        }
+
+        if(!attributes) {
+            $(validateField).value = 'no-attributes';
+        } else {
+            $(validateField).value = 'has-attributes';
+        }
+
+        if (newsForm.validator.validate()) {
+            var template = new Template(urlTemplate, newsTemplateSyntax);
+            var url = template.evaluate({
+                attributes: encode_base64(attributes.join(',')).replace(new RegExp('/','g'),'%2F').replace(new RegExp('=','g'),'%3D')
+            });
+            setLocation(url);
+        }
+    }
+
+    function checkMaxLength(Object, MaxLen)
+    {
+        if (Object.value.length > MaxLen-1) {
+            Object.value = Object.value.substr(0, MaxLen);
+        }
+        return 1;
+    }
+
+    Event.observe(window, 'load', function() {
+        var objName = '<?php echo $this->getSelectedTabId() ?>';
+        if (objName) {
+            obj = $(objName);
+            //IE fix (bubbling event model)
+            news_info_tabsJsTabs.setSkipDisplayFirstTab();
+            news_info_tabsJsTabs.showTabContent(obj);
+        }
+    });
+    //]]>
+</script>

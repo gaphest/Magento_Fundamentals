@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Astrio_Featuredcategory>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Astrio_Featuredcategory>
+    </modules>
+</config>

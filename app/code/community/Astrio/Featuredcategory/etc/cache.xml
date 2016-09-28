@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <placeholders>
+
+        <cms_block_widget>
+            <block>astrio_featuredcategory/featuredcategory</block>
+            <placeholder>FEATUREDCATEGORY</placeholder>
+            <container>Astrio_Featuredcategory_Model_PageCache_Container_Featuredcategory</container>
+            <cache_lifetime>1</cache_lifetime>
+        </cms_block_widget>
+
+    </placeholders>
+</config>

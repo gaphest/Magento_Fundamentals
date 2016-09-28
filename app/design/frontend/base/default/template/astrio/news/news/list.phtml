@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var $this Astrio_News_Block_News_List
+ * @var $_imageHelper Astrio_News_Helper_Image
+ * @var $_outputHelper Astrio_News_Helper_Output
+ * @var $_news Astrio_News_Model_News
+ */
+$_collection = $this->getCollection();
+
+$_imageHelper = $this->helper('astrio_news/image');
+$_outputHelper = $this->helper('astrio_news/output');
+?>
+
+<div class="page-title">
+    <h1><?php echo $this->__('News') ?></h1>
+</div>
+
+<div class="news-list">
+    <?php foreach ($_collection as $_news): ?>
+        <div class="news-list-one">
+            <div class="news-list-published">
+                <?php echo $_news->getPublishedAtFormated(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT) ?>
+            </div>
+            <div class="news-list-title">
+                <a href="<?php echo $_news->getUrl() ?>"><?php echo $_news->getTitle() ?></a>
+            </div>
+            <div class="news-list-description">
+                <?php if($shortDescription = $_news->getShortDescription()): ?>
+                    <?php echo $_outputHelper->newsAttribute($_news, $shortDescription, 'short_description') ?>
+                <?php endif ?>
+            </div>
+        </div>
+    <?php endforeach ?>
+    <?php echo $this->getChildHtml('toolbar') ?>
+</div>

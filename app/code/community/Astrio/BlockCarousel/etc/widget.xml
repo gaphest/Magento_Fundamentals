@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<widgets>
+    <astrio_blockcarousel_carousel type="astrio_blockcarousel/widget_carousel" translate="name description" module="astrio_blockcarousel">
+        <name>Blocks Carousel</name>
+        <description>Output CMS blocks with rotation</description>
+        <parameters>
+            <block_ids translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Block Ids</label>
+                <type>text</type>
+            </block_ids>
+            <template translate="label">
+                <value>astrio/blockcarousel/widget/carousel/default.phtml</value>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <source_model>astrio_blockcarousel/system_config_source_carousel_template</source_model>
+            </template>
+        </parameters>
+    </astrio_blockcarousel_carousel>
+</widgets>

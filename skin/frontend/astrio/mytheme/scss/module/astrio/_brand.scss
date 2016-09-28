@@ -1,0 +1,21 @@
+.brands_container{
+  margin:20px 0;
+}
+
+.brands-grid{
+  .brand-pic{
+    display: block;
+    text-align: center;
+    img{
+      max-width: 100%;
+      display: inline-block;
+    }
+  }
+
+  .std &{
+    list-style: none;
+    >li{
+      margin-left: 0;
+    }
+  }
+}

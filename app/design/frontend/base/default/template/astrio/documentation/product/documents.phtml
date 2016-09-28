@@ -1,0 +1,21 @@
+<?php /** @var Astrio_Documentation_Block_Product_Documents $this */ ?>
+<?php $_categories = $this->getCategories() ?>
+<?php if (!empty($_categories)): ?>
+    <div class="product_documents">
+        <?php foreach ($_categories as $_category): ?>
+            <h3><?php echo $_category['name'] ?></h3>
+            <ul>
+                <?php foreach ($_category['documents'] as $_document): ?>
+                    <li>
+                        <?php if ($_document->isFile()): ?>
+                            <a href="<?php echo $_document->getDownloadUrl() ?>" download="<?php echo $_document->getDownloadName() ?>" target="_blank" class="download_title"><?php echo $_document->getName() ?></a>
+                            <em class="download_type"><?php echo $_document->getFileType() ?>, <?php echo $_document->getFormattedSize() ?> MB</em>
+                        <?php else: ?>
+                            <a href="<?php echo $_document->getUrl() ?>" target="_blank"><?php echo $_document->getName() ?></a>
+                        <?php endif ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endforeach; ?>
+    </div>
+<?php endif ?>

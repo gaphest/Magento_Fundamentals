@@ -1,0 +1,12 @@
+<?php
+/**
+ * Brand title template
+ *
+ * @var Astrio_Brand_Block_Brand_View $this
+ */
+$brand = $this->getBrand();
+if ($brand): ?>
+    <div class="page-title brand-title">
+        <h1><?php echo $brand->getName() ?></h1>
+    </div>
+<?php endif ?>

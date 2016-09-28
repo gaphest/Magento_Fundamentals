@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<widgets>
+    <astrio_featuredcategory type="astrio_featuredcategory/featuredcategory">
+        <name>Featured Category</name>
+        <description type="desc">Add Featured Category block</description>
+        <parameters>
+            <cat_num>
+                <label>Category number</label>
+                <visible>1</visible>
+                <required>0</required>
+                <value></value>
+                <type>text</type>
+            </cat_num>
+            <sub_cat_num>
+                <label>Sub category number</label>
+                <visible>1</visible>
+                <required>0</required>
+                <value>3</value>
+                <type>text</type>
+            </sub_cat_num>
+            <all_category>
+                <label>Show all category</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </all_category>
+            <all_subcategory>
+                <label>Show all subcategory</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <value>1</value>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </all_subcategory>
+            <template>
+                <label>Template</label>
+                <visible>1</visible>
+                <value>astrio/featuredcategory/category.phtml</value>
+                <required>1</required>
+                <type>text</type>
+            </template>
+        </parameters>
+    </astrio_featuredcategory>
+</widgets>
